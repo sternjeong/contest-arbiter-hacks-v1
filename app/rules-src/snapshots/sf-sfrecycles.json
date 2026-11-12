@@ -1,0 +1,636 @@
+{
+ "source": "San Francisco Environment Department - SF Recycles item pages",
+ "urlPattern": "https://www.sfenvironment.org/sfrecycles/item/{slug}",
+ "retrieved": "2026-11-12",
+ "records": {
+  "aluminum-cans": {
+   "name": "Aluminum cans",
+   "aliases": [
+    "soda",
+    "tin can",
+    "aluminum can",
+    "can"
+   ],
+   "text": "Recycling bin Empty contents. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+  },
+  "aluminum-containers-trays": {
+   "name": "Aluminum containers & trays",
+   "aliases": [],
+   "text": "Recycling bin"
+  },
+  "aluminum-foil": {
+   "name": "Aluminum foil",
+   "aliases": [],
+   "text": "Recycling bin Make foil into ball. No food."
+  },
+  "art-supplies-usable": {
+   "name": "Art supplies (usable)",
+   "aliases": [],
+   "text": "Please reuse or donate"
+  },
+  "battery-embedded-products": {
+   "name": "Battery embedded products",
+   "aliases": [
+    "Wireless cordless vacuum",
+    "Wireless earbuds",
+    "Wireless headphone",
+    "Smart phone",
+    "smart watch",
+    "laptops",
+    "tablets",
+    "iPad",
+    "iPhone",
+    "Fitness trackers",
+    "Wireless bluetooth speakers",
+    "Electric toothbrush",
+    "power banks",
+    "Roomba",
+    "Rechargeable devices",
+    "Cell phone",
+    "vape pen (nicotine only)",
+    "vaping device (nicotine only)",
+    "e-cigarette",
+    "electronic cigarette",
+    "Battery embedded device",
+    "Battery-embedded products",
+    "Battery-embedded devices"
+   ],
+   "text": "Special handling. Don't put in any bin. Electronic devices that have a non-removable, built-in rechargeable battery—commonly found in smartphones, tablets, laptops, e-readers, wireless headphones, and some small appliances or tools. Because the battery cannot be separated, the entire device must be recycled as electronic waste (e-waste). Do not attempt to remove batteries from devices. Safety Note: For batteries that are damaged, defective (swollen), or recalled, contact Recology at 415-330-1300 to schedule a FREE pick-up."
+  },
+  "bicycle": {
+   "name": "Bicycle",
+   "aliases": [
+    "Bike"
+   ],
+   "text": "Please reuse or donate"
+  },
+  "books-reusable": {
+   "name": "Books (reusable)",
+   "aliases": [],
+   "text": "Please reuse or donate Donate books to a local thrift store or to Friends of the San Francisco Public Library's donation center in Potrero Hill."
+  },
+  "bottle-caps": {
+   "name": "Bottle caps",
+   "aliases": [
+    "caps",
+    "cap",
+    "bottle cap"
+   ],
+   "text": "Recycling bin"
+  },
+  "branches-shrubs-twigs": {
+   "name": "Branches, shrubs, twigs",
+   "aliases": [],
+   "text": "Compost bin Break branches down to fit in green bin."
+  },
+  "cardboard-tubes": {
+   "name": "Cardboard tubes",
+   "aliases": [
+    "paper tube",
+    "roll"
+   ],
+   "text": "Recycling bin"
+  },
+  "cardboard": {
+   "name": "Cardboard",
+   "aliases": [
+    "Box",
+    "Cardboard box",
+    "Cereal box",
+    "Pizza box",
+    "Amazon box",
+    "Brown box",
+    "Paper box",
+    "Cardboard tubes",
+    "Paper towel roll",
+    "Toilet paper roll"
+   ],
+   "text": "Recycling bin Break down boxes, and do not recycle cardboard that is wet or contaminated by food residue or grease. You can recycle clean pieces of cardboard by cutting away the soiled pieces."
+  },
+  "cds-dvds-working": {
+   "name": "CDs, DVDs (working)",
+   "aliases": [],
+   "text": "Please reuse or donate"
+  },
+  "cereal-boxes": {
+   "name": "Cereal boxes",
+   "aliases": [],
+   "text": "Recycling bin Remove plastic lining (if any) and bundle with plastic bags."
+  },
+  "clothes-usable": {
+   "name": "Clothes (usable)",
+   "aliases": [
+    "Textiles"
+   ],
+   "text": "Please reuse or donate Donate clean and dry clothes to a local thrift store. Call to inquire if they accept other items such as bedding and linens. If you have damaged or unusable clothes, please visit this page on our site for more information."
+  },
+  "coffee-grounds-coffee-filter": {
+   "name": "Coffee grounds, coffee filter",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "compostable-bags": {
+   "name": "Compostable bags",
+   "aliases": [
+    "begas takeout containers"
+   ],
+   "text": "Compost bin Item must be labeled \"compostable.\""
+  },
+  "compostable-cups-plates-bowls-utensils": {
+   "name": "Compostable cups, plates, bowls, utensils",
+   "aliases": [],
+   "text": "Compost bin Item must be labeled \"compostable.\""
+  },
+  "corks-natural": {
+   "name": "Corks, natural",
+   "aliases": [],
+   "text": "Compost bin Compost natural corks in your green composting bin. Place composite and plastic corks in the black trash bin."
+  },
+  "cotton-balls-swabs": {
+   "name": "Cotton balls, swabs",
+   "aliases": [],
+   "text": "Compost bin No plastic stems."
+  },
+  "disposable-ice-packs": {
+   "name": "Disposable ice packs",
+   "aliases": [
+    "cold pack",
+    "freezer pak",
+    "freezer",
+    "pack",
+    "pak",
+    "ice packs",
+    "freezer packs",
+    "freezer pack",
+    "chill packs"
+   ],
+   "text": "Landfill bin Disposable ice packs (plastic filled with a gooey substance) are difficult to recycle. Reuse when possible. If your ice pack came with a meal delivery kit, contact the meal kit provider to see if they have a take-back program."
+  },
+  "disposable-masks": {
+   "name": "Disposable masks",
+   "aliases": [
+    "Surgical mask",
+    "Medical mask",
+    "Face mask"
+   ],
+   "text": "Landfill bin disposable masks"
+  },
+  "disposable-razors": {
+   "name": "Disposable razors",
+   "aliases": [],
+   "text": "Landfill bin"
+  },
+  "dog-or-cat-poop-kitty-litter": {
+   "name": "Dog or cat poop, kitty litter",
+   "aliases": [
+    "poo"
+   ],
+   "text": "Landfill bin For health and safety, always put in the black bin."
+  },
+  "egg-cartons": {
+   "name": "Egg cartons",
+   "aliases": [],
+   "text": "Recycling bin Paper and plastic egg cartons okay. No polystyrene foam."
+  },
+  "eggshells": {
+   "name": "Eggshells",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "electric-bike-battery": {
+   "name": "Electric bike battery",
+   "aliases": [
+    "e-bike battery",
+    "electric bicycle",
+    "micromobility devices",
+    "e-mobility devices",
+    "electric scooters",
+    "ebike"
+   ],
+   "text": "Special handling. Don't put in any bin. Lithium batteries from electric bikes, scooters, and other micromobility devices do not belong in any of the curbside bins. Most drop-off locations accept only the battery, not the bike or device. Call ahead to confirm whether your specific battery brand is accepted. Safety Note: Do not attempt to remove batteries from devices where they are built-in and non-removable. For recycling options, please refer to the search results under electric micromobility devices. Batteries that are damaged, swollen, defective, or recalled are not accepted at standard drop-off sites. For proper handling, contact Recology at 415-330-1300 to schedule a FREE pick-up."
+  },
+  "electric-micromobility-devices": {
+   "name": "Electric Micromobility Devices",
+   "aliases": [
+    "Electric bike",
+    "electric scooter",
+    "electric skateboard",
+    "hoverboards"
+   ],
+   "text": "Special handling. Don't put in any bin. Electric micromobility devices are a category of small transportation devices that are powered by electric motors and batteries. Examples include electric-powered bikes, scooters, hoverboards, and skateboards. Safety Note: Do not attempt to remove batteries from devices where they are built-in and non-removable. For recycling options for just the battery, please refer to the search results under electric bike battery. Batteries that are damaged, swollen, defective, or recalled are not accepted at standard drop-off sites. For proper handling, contact Recology at 415-330-1300 to schedule a FREE pick-up."
+  },
+  "empty-one-pound-disposable-propane-or-butane-gas-cylinder": {
+   "name": "Empty one-pound disposable propane or butane gas cylinder",
+   "aliases": [
+    "camp stove fuel cylinder"
+   ],
+   "text": "Special handling. Don't put in any bin. Search below for retail take-back locations. No business waste accepted. Handle cylinders that are not empty as hazardous waste."
+  },
+  "eyeglasses": {
+   "name": "Eyeglasses",
+   "aliases": [],
+   "text": "Special handling. Don't put in any bin. Eye glasses in good condition can be donated to some vendors."
+  },
+  "feathers": {
+   "name": "Feathers",
+   "aliases": [],
+   "text": "Compost bin No synthetic fibers."
+  },
+  "flowers-floral-trimmings": {
+   "name": "Flowers, floral trimmings",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "food-containers-empty": {
+   "name": "Food containers (empty)",
+   "aliases": [],
+   "text": "Recycle bin"
+  },
+  "food-scraps-spoiled-food": {
+   "name": "Food scraps, spoiled food",
+   "aliases": [
+    "scraps",
+    "leftovers",
+    "mold",
+    "food"
+   ],
+   "text": "Compost bin"
+  },
+  "fur-cats-dogs-etc": {
+   "name": "Fur from cats, dogs, etc.",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "glass-bottles-empty": {
+   "name": "Glass bottles (empty)",
+   "aliases": [],
+   "text": "Recycle bin Caps and lids okay. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+  },
+  "glass-jars-empty": {
+   "name": "Glass jars (empty)",
+   "aliases": [],
+   "text": "Recycle bin"
+  },
+  "grass-weeds": {
+   "name": "Grass, weeds",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "greasy-pizza-boxes": {
+   "name": "Greasy pizza boxes",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "hair": {
+   "name": "Hair",
+   "aliases": [],
+   "text": "Compost bin Natural hair only. Donate hair to Clean Wave."
+  },
+  "hardware-tools-usable": {
+   "name": "Hardware & tools (usable)",
+   "aliases": [],
+   "text": "Please reuse or donate"
+  },
+  "house-paint": {
+   "name": "House Paint",
+   "aliases": [
+    "stain",
+    "latex paint",
+    "water-based paint"
+   ],
+   "text": "Special handling. Don't put in any bin. Includes indoor and outdoor, latex and oil-base paints. Maximum 5 gallons per day at Retail Take-Back locations. No business waste. Recycle empty and dry small paint cans in blue recycling bin."
+  },
+  "household-batteries": {
+   "name": "Household batteries",
+   "aliases": [
+    "consumer batteries",
+    "loose batteries",
+    "A-AA-C-D-9 volt batteries"
+   ],
+   "text": "Special handling. Don't put in any bin. PUT CLEAR TAPE OVER THE CONTACTS OF LITHIUM BATTERIES. Residents in a house or small apartment complex, put loose household batteries in a clear plastic bag and place on top of the black/gray bin. Residents in multi-family apartment buildings can ask their property manager to request a FREE orange battery collection bucket by calling Recology at (415) 330-1300. Batteries from businesses, cars, electric bikes and scooters, vaping devices, laptops, and cell phones are not accepted. Certain devices may contain an embedded lithium battery and are not designed to be removed or replaced. For your safety, do not attempt to remove these batteries. Damaged, defective (swollen battery), or recalled lithium-based batteries are also not accepted. For more recycling options, contact Recology."
+  },
+  "jar-lids": {
+   "name": "Jar lids",
+   "aliases": [
+    "lid"
+   ],
+   "text": "Recycling bin"
+  },
+  "lead-acid-auto-and-marine-batteries": {
+   "name": "Lead-acid auto and marine batteries",
+   "aliases": [
+    "car battery",
+    "boat battery",
+    "Sulfuric acid battery"
+   ],
+   "text": "Special handling. Don't put in any bin. Lead-acid batteries are heavy-duty rechargeable batteries commonly used in cars, trucks, motorcycles, and boats. They contain lead and sulfuric acid, both of which are hazardous and require special handling."
+  },
+  "leaves": {
+   "name": "Leaves",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "light-bulbs-cfls-and-tubes": {
+   "name": "Light bulbs (CFLs and tubes)",
+   "aliases": [
+    "fluorescent tubes",
+    "fluorescent circles",
+    "high intensity discharge or HID",
+    "Sodium Vapor"
+   ],
+   "text": "Special handling. Don't put in any bin. Many older types of energy efficient lighting contain toxic mercury. Max 5 bulbs or tubes per day. No business waste at Retail Take-Back locations. For more information, review our Quick guide to light bulb disposal in San Francisco | San Francisco Environment Department (SFE)."
+  },
+  "light-bulbs-led": {
+   "name": "Light bulbs (LED)",
+   "aliases": [
+    "light emitting diode"
+   ],
+   "text": "Special handling. Don't put in any bin. Many LED lighting products contain toxic metals other than mercury.  Max 5 bulbs or tubes per day.  No business waste at Retail Take-Back locations."
+  },
+  "meat": {
+   "name": "Meat",
+   "aliases": [],
+   "text": "Compost bin Bones okay."
+  },
+  "medicine": {
+   "name": "Medicine",
+   "aliases": [
+    "medicines",
+    "medication",
+    "pills",
+    "pill",
+    "meds",
+    "pharmaceuticals",
+    "drugs",
+    "pharmaceutical"
+   ],
+   "text": "Special handling. Don't put in any bin. Take to a designated drop-off location, or request a mail-back package free of charge. No business waste. Please note that auto-injectors are not accepted at the drop-off kiosks, and must use a mail-back package or be brought to a medicine drop off event in a proper sharps container."
+  },
+  "napkins-greasy-paper-bags": {
+   "name": "Napkins, greasy paper bags",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "newspapers-magazines": {
+   "name": "Newspapers, magazines",
+   "aliases": [],
+   "text": "Recycling bin"
+  },
+  "other-paint": {
+   "name": "Other Paint",
+   "aliases": [],
+   "text": "Special handling. Don't put in any bin. Paint for auto and appliance touch-ups, traffic marking, and art projects.  Retail Take-Back locations do NOT collect these paints.  Handle full or partial containers as chemical liquid.  No business waste."
+  },
+  "paper-bags": {
+   "name": "Paper bags",
+   "aliases": [],
+   "text": "Recycling bin Recycle clean and dry paper only. For greasy or food-stained paper, place in the green composting bin."
+  },
+  "paper-clamshells": {
+   "name": "Paper clamshells",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "paper-coffee-cups-empty": {
+   "name": "Paper coffee cups (empty)",
+   "aliases": [
+    "cup",
+    "paper sleeve",
+    "coffee cup",
+    "coffee"
+   ],
+   "text": "Recycling bin Recycle empty cup, sleeve, and plastic lid."
+  },
+  "paper-plates": {
+   "name": "Paper plates",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "paper-soup-cup-empty": {
+   "name": "Paper soup cup (empty)",
+   "aliases": [],
+   "text": "Recycling bin"
+  },
+  "paper-take-out-boxes": {
+   "name": "Paper take-out boxes",
+   "aliases": [
+    "take-out; carry-out",
+    "left-overs",
+    "doggy-bags"
+   ],
+   "text": "Compost bin Chopsticks okay."
+  },
+  "paper-towels": {
+   "name": "Paper towels",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "plastic-bags-plastic-wrap": {
+   "name": "Plastic bags, plastic wrap",
+   "aliases": [
+    "bubble wrap",
+    "bubblewrap",
+    "plastic film",
+    "packaging"
+   ],
+   "text": "Please reuse or donate Use a take-back service or drop-off location near you."
+  },
+  "plastic-bottles-empty": {
+   "name": "Plastic bottles (empty)",
+   "aliases": [],
+   "text": "Recycle bin CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+  },
+  "plastic-bucket": {
+   "name": "Plastic bucket",
+   "aliases": [
+    "tub",
+    "pail"
+   ],
+   "text": "Recycle bin Wire handle okay."
+  },
+  "plastic-clamshells-empty": {
+   "name": "Plastic clamshells (empty)",
+   "aliases": [],
+   "text": "Recycle bin"
+  },
+  "plastic-coffee-cup-lids": {
+   "name": "Plastic coffee cup lids",
+   "aliases": [],
+   "text": "Recycle bin"
+  },
+  "plastic-cups-plates-empty": {
+   "name": "Plastic cups, plates (empty)",
+   "aliases": [],
+   "text": "Recycle bin No polystyrene foam. If labeled \"compostable,\" put in green bin."
+  },
+  "plastic-tubs-lids-empty": {
+   "name": "Plastic tubs, lids (empty)",
+   "aliases": [
+    "plastic ramekins",
+    "to go plastic"
+   ],
+   "text": "Recycle bin"
+  },
+  "popsicle-sticks": {
+   "name": "Popsicle sticks",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "seafood": {
+   "name": "Seafood",
+   "aliases": [
+    "shrimp",
+    "salmon",
+    "fish",
+    "seafood",
+    "sea food",
+    "shellfish",
+    "shell fish",
+    "fishes"
+   ],
+   "text": "Compost bin Shells okay."
+  },
+  "sewing-machine-working": {
+   "name": "Sewing machine (working)",
+   "aliases": [],
+   "text": "Please reuse or donate"
+  },
+  "shiny-food-wrappers": {
+   "name": "Shiny food wrappers",
+   "aliases": [
+    "Snack wrapper",
+    "Potato chip bag",
+    "Chip bag",
+    "Candy bar wrapper",
+    "Mylar"
+   ],
+   "text": "Landfill bin The shiny lining in snack packaging is made of a mix of materials. Since recycling plants cannot separate the layers, these wrappers and bags cannot be recycled. If your wrappers feel like plastic or are shiny inside, make sure they go in the garbage."
+  },
+  "shoes-usable": {
+   "name": "Shoes (usable)",
+   "aliases": [
+    "shoe",
+    "sandal",
+    "sandals",
+    "footwear"
+   ],
+   "text": "Please reuse or donate"
+  },
+  "spray-cans-empty": {
+   "name": "Spray cans (empty)",
+   "aliases": [],
+   "text": "Special handling. Don't put in any bin."
+  },
+  "spray-paint": {
+   "name": "Spray paint",
+   "aliases": [
+    "aerosol paint"
+   ],
+   "text": "Special handling. Don't put in any bin. Retail Take-Back locations do NOT collect spray paint.  Use up and recycle empty can in blue recycling bin - remove cap and tip.  Handle full or partial spray cans as chemical spray.  No business waste."
+  },
+  "styrofoamtm-blocks-polystyrene-foam": {
+   "name": "Styrofoam™ blocks (polystyrene foam)",
+   "aliases": [],
+   "text": "Special handling. Don't put in any bin. Drop-off guidelines for Styrofoam recycling Only clean Styrofoam is accepted—this means it must be free of debris and must not have come into contact with raw meat or fish. Recology only accepts solid blocks of polystyrene foam. Items like meat trays, packing peanuts, and pellets are not eligible for drop-off. You can recycle clean Styrofoam blocks for free at the Recology San Francisco Transfer Station. Visit the Recology website to learn more."
+  },
+  "styrofoamtm-cups-polystyrene-foam-cups": {
+   "name": "Styrofoam™ cups (polystyrene foam cups)",
+   "aliases": [],
+   "text": "Landfill bin"
+  },
+  "styrofoamtm-peanuts-polystyrene-foam": {
+   "name": "Styrofoam™ peanuts (polystyrene foam)",
+   "aliases": [],
+   "text": "Landfill bin"
+  },
+  "syringes-needles": {
+   "name": "Syringes, needles",
+   "aliases": [
+    "sharps",
+    "needle",
+    "sharp",
+    "syringe"
+   ],
+   "text": "Special handling. Don't put in any bin. Take to a designated drop-off location or request a free mail-back package. Drop-off locations DO NOT ACCEPT LOOSE NEEDLES. Visit a drop-off location to get a free sharps collection container. No business waste."
+  },
+  "tea-bags": {
+   "name": "Tea bags",
+   "aliases": [
+    "teabags",
+    "teabag",
+    "tea",
+    "tea bag"
+   ],
+   "text": "Compost bin Some tea bags have plastic and don’t belong in the compost bin. Compost the herbs. Compost paper tea bags and landfill plastic ones. Remove staples before composting paper tea bags."
+  },
+  "tissue-paper": {
+   "name": "Tissue paper",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "tissues": {
+   "name": "Tissues",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "toothpaste-tubes-cream-ointment-empty": {
+   "name": "Toothpaste tubes, cream, ointment (empty)",
+   "aliases": [
+    "tube of ointment"
+   ],
+   "text": "Landfill bin"
+  },
+  "tree-trimmings": {
+   "name": "Tree trimmings",
+   "aliases": [],
+   "text": "Compost bin Cut to less than 4 feet long and 6 inches wide."
+  },
+  "unused-autoinjectors": {
+   "name": "Unused Autoinjectors",
+   "aliases": [
+    "epipen"
+   ],
+   "text": "Special handling. Don't put in any bin. Medicine drop-off locations cannot collect medicine dispensed with a syringe for self-injection.  Order a special mail-back package.  No business waste.  Handle used auto injectors as a syringe."
+  },
+  "vapes": {
+   "name": "Vapes",
+   "aliases": [
+    "electronic cigarette",
+    "e-cigarette",
+    "vape",
+    "vape pen",
+    "pod system",
+    "electronic nicotine delivery systems",
+    "vaping device"
+   ],
+   "text": "Special handling. Don't put in any bin. Vaping devices contain a battery, nicotine, flavorings, and other chemicals that do not belong in any of the three bins (landfill, recycling, and composting). Safety Note: Do not attempt to remove batteries from devices where they are built-in and non-removable. Batteries that are damaged, swollen, defective, or recalled are not accepted at standard drop-off sites. For proper handling, contact Recology at 415-330-1300 to schedule a FREE pick-up. Vape devices with cannabis or other controlled substances are not accepted."
+  },
+  "vhs": {
+   "name": "VHS",
+   "aliases": [
+    "VHS tape"
+   ],
+   "text": "Please reuse or donate Scrap accepts donations of VHS tapes, but only up to the size of a shoebox. Otherwise, please remove the film portion before placing hard plastic in the recycling bin."
+  },
+  "waxy-cardboard-wax-paper": {
+   "name": "Waxy cardboard, wax paper",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "wine-bottles": {
+   "name": "Wine bottles",
+   "aliases": [],
+   "text": "Recycle bin Empty bottles in the blue bin. Put corks made with natural material in the green bin. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+  },
+  "wood-chopsticks-coffee-stirrers-toothpicks": {
+   "name": "Wood chopsticks, coffee stirrers, toothpicks",
+   "aliases": [],
+   "text": "Compost bin"
+  },
+  "wrapping-paper-non-metallic": {
+   "name": "Wrapping paper (non-metallic)",
+   "aliases": [],
+   "text": "Recycling bin Metallic wrapping paper is not accepted."
+  }
+ }
+}

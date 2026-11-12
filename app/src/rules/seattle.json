@@ -1,0 +1,1714 @@
+{
+  "$schema": "./ruleset.schema.json",
+  "schemaVersion": 1,
+  "city": {
+    "id": "seattle",
+    "name": "Seattle",
+    "region": "Washington, USA",
+    "authority": "Seattle Public Utilities",
+    "flag": "🇺🇸"
+  },
+  "bins": {
+    "recycling": {
+      "label": "Recycling cart",
+      "short": "Recycle"
+    },
+    "compost": {
+      "label": "Food & yard waste cart",
+      "short": "Compost"
+    },
+    "garbage": {
+      "label": "Garbage cart",
+      "short": "Garbage"
+    },
+    "special": {
+      "label": "Drop-off or hazardous-waste facility",
+      "short": "Special"
+    },
+    "reuse": {
+      "label": "Donate or reuse",
+      "short": "Reuse"
+    }
+  },
+  "retrieved": "2026-11-12",
+  "sources": [
+    {
+      "id": "sea-wdig",
+      "title": "Seattle Public Utilities: Where Does It Go? tool",
+      "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+      "publisher": "Seattle Public Utilities",
+      "retrieved": "2026-11-12"
+    },
+    {
+      "id": "sea-howto",
+      "title": "Seattle Public Utilities: How to Sort at Home",
+      "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/how-to-sort-at-home",
+      "publisher": "Seattle Public Utilities",
+      "retrieved": "2026-11-12"
+    },
+    {
+      "id": "sea-process",
+      "title": "Seattle Public Utilities: Seattle's Recycling Process",
+      "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/recycling/recycling-process",
+      "publisher": "Seattle Public Utilities",
+      "retrieved": "2026-11-12"
+    }
+  ],
+  "notes": [],
+  "general": [
+    {
+      "id": "clean",
+      "text": "All recycling must be empty, clean and dry.",
+      "citation": {
+        "sourceId": "sea-howto",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/how-to-sort-at-home",
+        "section": "Recycling",
+        "quote": "All recycling must be empty, clean, and dry to be ready for recycling. No foods or liquids, because they ruin other recyclables."
+      }
+    },
+    {
+      "id": "loose",
+      "text": "Put recyclables loose in the cart: never bagged or boxed.",
+      "citation": {
+        "sourceId": "sea-process",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/recycling/recycling-process",
+        "section": "What can customers do to #RecycleRight?",
+        "quote": "Be sure to put materials loose in the cart: do not bag or box recyclables."
+      }
+    },
+    {
+      "id": "min-3in",
+      "text": "Items must be bigger than 3 inches.",
+      "citation": {
+        "sourceId": "sea-howto",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/how-to-sort-at-home",
+        "section": "Recycling",
+        "quote": "Items need to be bigger than 3 inches."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "itemId": "cardboard-box",
+      "bin": "recycling",
+      "prep": [
+        "Flatten",
+        "Tape and labels can stay on",
+        "Remove packing materials inside"
+      ],
+      "conditions": [
+        "flatten",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "greasy, oily or mostly wet",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Cardboard Boxes → Food & yard waste",
+            "quote": "Cardboard with grease or oil stains (like pizza boxes) go in the food and yard waste cart. Put cardboard that is mostly wet in the food and yard waste cart."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Cardboard Boxes → Recycling",
+        "quote": "Cardboard and flattened cardboard boxes go in the recycling. You can leave labels and tape on the boxes. Remove any packing materials inside and dispose of properly. Pet scratch pads made of cardboard are recyclable."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pizza-box",
+      "bin": "compost",
+      "prep": [
+        "Remove anything that is not paper or cardboard"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Pizza Boxes → Food & yard waste",
+        "quote": "Greasy or food-soiled pizza boxes go in the food and yard waste. Remove any materials that are not paper or cardboard."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cereal-box",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Plastic liners and trays go in the garbage"
+      ],
+      "conditions": [
+        "clean",
+        "empty",
+        "remove-liner"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Cereal or Cracker Boxes → Recycling",
+        "quote": "Clean and Empty cereal and cracker boxes go in the recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "newspaper",
+      "bin": "recycling",
+      "variants": [
+        {
+          "when": "wet or food-soiled",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Newspapers → Food & yard waste",
+            "quote": "Wet or food-soiled newspaper goes in the food and yard waste."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Newspapers → Recycling",
+        "quote": "Newspaper goes in the recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "magazine",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Magazines → Recycling",
+        "quote": "Magazines go in the recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "junk-mail",
+      "bin": "recycling",
+      "prep": [
+        "Open and separate junk mail"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Junk Mail → Recycling",
+        "quote": "All paper junk mail goes in the recycling. Please open and separate junk mail before recycling. Items include: Catalogs Flyers Envelopes with or without clear plastic windows Newspapers Phone books Magazines Glossy paper"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "shredded-paper",
+      "bin": "recycling",
+      "prep": [
+        "Small amounts only, contained in a paper bag",
+        "Drop-off at a collection site is preferred"
+      ],
+      "conditions": [
+        "bag-shredded"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Shredded Paper → Recycling",
+        "quote": "You may bag small amounts of shredded paper in a paper bag and keep it contained so it does not fly out and create litter. Shredded credit cards and envelopes with plastic windows are not accepted."
+      },
+      "verified": true,
+      "note": "SPU says drop-off is the best option and that loose shreds contaminate other recyclables."
+    },
+    {
+      "itemId": "paper-bag",
+      "bin": "recycling",
+      "conditions": [
+        "clean",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "food-soiled",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Paper Bags → Food & yard waste",
+            "quote": "Food-soiled bags go in the food and yard waste cart. Please remove all stickers, tape, or staples."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Paper Bags → Recycling",
+        "quote": "Clean and dry paper bags go the recycling. Stickers, tape, and staples okay."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-coffee-cup",
+      "bin": "recycling",
+      "prep": [
+        "Empty and dry"
+      ],
+      "conditions": [
+        "empty",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "stained with liquid (non-compostable cup)",
+          "trigger": "dirty",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Hot or To-Go Beverage Cups → Garbage",
+            "quote": "Styrofoam coffee cups Non-compostable paper cups stained with liquid Non-paper cup sleeves Plastic straws"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Hot or To-Go Beverage Cups → Recycling",
+        "quote": "Empty and dry paper cups. Paper cup sleeves go into recycling. Plastic to-go cups"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "milk-carton",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Milk, Juice, or Soup Cartons → Recycling",
+        "quote": "Paper and plastic milk, juice, and soup cartons when they are clean, empty, and dry Cartons labeled Tetra Pak Other aseptic cartons Plastic spouts don't need to be removed to recycle food cartons."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "juice-box",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Remove caps and put them in the garbage"
+      ],
+      "conditions": [
+        "empty",
+        "lid-off"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Aseptic or Tetra Pak Cartons → Recycling",
+        "quote": "Empty milk, juice, and soup cartons Cartons labeled Tetra Pak Other aseptic cartons Plastic spouts don't need to be removed to recycle Tetra Pak cartons. Caps should be removed and placed in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "egg-carton-paper",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Egg Cartons → Food & yard waste",
+        "quote": "Paper egg cartons are not a highly valuable recyclable; therefore, it is best to place them in the Food and Yard Waste container for composting."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-towel",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "used with cleaning products or bodily fluids",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Paper Towels → Garbage",
+            "quote": "Paper towels used with cleaning products or that have bodily fluids on them and blue \"shop\" towels, which are made of cotton, go in the garbage."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Paper Towels → Food & yard waste",
+        "quote": "Paper towels and napkins that have food or grease on them go in the food and yard waste. Unused paper towels also go in the compost. The paper fiber is too short to be recycled into new paper products."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "tissues",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Facial Tissue (Kleenex) → Garbage",
+        "quote": "Kleenex (facial tissue) goes in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-plate",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "shiny plastic coating and dirty",
+          "trigger": "dirty",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Paper Plates or Cups → Garbage",
+            "quote": "Dirty plates and cups with a shiny coating Styrofoam plates and cups"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Paper Plates or Cups → Food & yard waste",
+        "quote": "Uncoated (not shiny) paper plates (such as Chinet brand)"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cardboard-tube",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Paper Towel Tubes, Toilet Paper Tubes, Cardboard Tubes → Recycling",
+        "quote": "Paper towel and toilet paper tubes go in the recycling. Glue and small amounts of paper are okay to leave on. Large cardboard tubes can also be recycled."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wrapping-paper",
+      "bin": "recycling",
+      "conditions": [
+        "clean",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "foil or plastic gift wrap",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Gift Wrap → Garbage",
+            "quote": "These items go in the garbage: Plastic gift wrap Foil gift wrap Plastic or foil gift bows Plastic gift bags"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Gift Wrap → Recycling",
+        "quote": "Wrapping paper Paper gift bags Paper gift boxes Gift tissue paper Kraft Paper Construction Paper Inner cardboard tube Clean, and dry wrapping paper go into recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "receipt",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Receipts → Garbage",
+        "quote": "The most common type of receipt, (coated/thermal,) always goes in the garbage. This is what you will commonly recieve from automatic printers at stores."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "hardcover-book",
+      "bin": "garbage",
+      "prep": [
+        "Donate if in good condition",
+        "Pages can be recycled once the cover and binding are removed"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Hardcover Books → Garbage",
+        "quote": "Intact (with cover and binding) hardcover books go in the garbage. This is because the hard cover and binding are not recyclable."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "frozen-food-box",
+      "bin": "recycling",
+      "conditions": [
+        "clean",
+        "empty",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Frozen Food Boxes → Recycling",
+        "quote": "Clean frozen food boxes and other food boxes Clean, empty and dry trays that hold the food Plastic coated cardboard and paperboard"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-can",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Food and Beverage Cans → Recycling",
+        "quote": "Beverage cans: Empty soda and beverage cans go in the recycling. Crushed aluminum cans are ok to recycle."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "beer-can",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Food and Beverage Cans → Recycling",
+        "quote": "Beverage cans: Empty soda and beverage cans go in the recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "steel-can",
+      "bin": "recycling",
+      "prep": [
+        "Empty, rinse, dry",
+        "Keep the lid partly attached or push it inside the can"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Steel or Tin Cans → Recycling",
+        "quote": "Recyce cans when they are clean, empty and dry. Keep can lids partially attached, push the lid into the can, or put loose lid into can and crimp shut. You don't need to remove the can label."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-foil",
+      "bin": "recycling",
+      "prep": [
+        "Clean and dry",
+        "Ball it up bigger than 3 inches"
+      ],
+      "conditions": [
+        "clean",
+        "dry",
+        "ball-up",
+        "min-3in"
+      ],
+      "variants": [
+        {
+          "when": "dirty or food-covered",
+          "trigger": "dirty",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Aluminum Foil → Garbage",
+            "quote": "Dirty or food-covered aluminum foil or food pans Wine bottle foil"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Aluminum Foil → Recycling",
+        "quote": "Clean and dry aluminum foil should be balled up and larger than 3 inches Aluminum food pans Foil and trays must be empty, clean, and dry"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-tray",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Aluminum Foil → Recycling",
+        "quote": "Aluminum food pans Foil and trays must be empty, clean, and dry"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aerosol-can",
+      "bin": "recycling",
+      "prep": [
+        "Non-hazardous contents only",
+        "Must be completely empty of contents and pressure"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "variants": [
+        {
+          "when": "held paint, solvent or other hazardous product",
+          "trigger": "other",
+          "bin": "special",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Aerosol Cans → Hazardous waste",
+            "quote": "Bring cans that contain hazardous materials like paint, solvents, bear spray, or other flammables to a household hazardous waste facility . No fee. Hazardous products are usually labeled with the words Danger, Poison, Caution, or Warning."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Aerosol Cans → Recycling",
+        "quote": "Empty aerosol cans that had non-hazardous materials in them can be put in the recycling ONLY if the can is completely emptied of contents and pressure."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "metal-jar-lid",
+      "bin": "garbage",
+      "prep": [
+        "Loose lids 3 inches or wider can be recycled"
+      ],
+      "variants": [
+        {
+          "when": "3 inches (7.6 cm) or wider",
+          "trigger": "other",
+          "bin": "recycling",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Bottle Caps and Jar Lids → Recycling",
+            "quote": "Loose plastic and metal lids 3 inches in diameter or larger"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Bottle Caps and Jar Lids → Garbage",
+        "quote": "Loose lids of any material less than 3 inches in diameter Loose plastic bottle caps less than 3 inches in diameter Metal beer and soda caps less than 3 inches in diameter"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bottle-cap",
+      "bin": "garbage",
+      "variants": [
+        {
+          "when": "screwed onto an empty plastic bottle",
+          "trigger": "other",
+          "bin": "recycling",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Bottle Caps and Jar Lids → Recycling",
+            "quote": "Small plastic bottle caps if screwed onto an empty plastic bottle can be put into the recycling"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Bottle Caps and Jar Lids → Garbage",
+        "quote": "Loose plastic bottle caps less than 3 inches in diameter"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pots-pans",
+      "bin": "recycling",
+      "prep": [
+        "Donate if still usable"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Pots or Pans → Recycling",
+        "quote": "Metal pots and pans can go in the recycling. Pots and pans can have a non-stick coating and small amounts of plastic, wood, or rubber attached."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paint-can-empty",
+      "bin": "garbage",
+      "prep": [
+        "Leave the lid off so collectors can see it is empty/dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Paint, Paint Thinner, and Paint Cans → Garbage",
+        "quote": "Empty paint cans cannot be cleaned enough to recycle and should go out in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wire-hanger",
+      "bin": "garbage",
+      "prep": [
+        "Better: donate or return to a dry cleaner"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Wire Clothes Hangers → Garbage",
+        "quote": "Wire clothes hangers and wreath frames can go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "glass-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty, clean, dry",
+        "Lids under 3 inches go in the garbage"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "min-3in"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Glass Bottles or Jars → Recycling",
+        "quote": "Glass bottles and jars larger than 3 inches. Lids 3 inches or larger"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wine-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Remove the foil (garbage)"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Wine Bottle Foil → Recycling",
+        "quote": "After the foil has been removed and discarded, the wine bottle itself can be recycled."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "glass-jar",
+      "bin": "recycling",
+      "prep": [
+        "Empty, clean, dry",
+        "Separate the lid"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "min-3in"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Glass Bottles or Jars → Recycling",
+        "quote": "Glass bottles and jars larger than 3 inches. Lids 3 inches or larger"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "drinking-glass",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Drinking Glasses → Garbage",
+        "quote": "Drinking glasses can go in the garbage, whether they're broken or not."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "broken-glass-bottle",
+      "bin": "recycling",
+      "conditions": [
+        "min-3in"
+      ],
+      "variants": [
+        {
+          "when": "pieces smaller than 3 inches",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Broken Glass → Garbage",
+            "quote": "All pieces of broken drinking glasses or wine glasses Pieces of broken bottles and jars smaller than 3 inches All broken kitchenware glass or baking glass such as Pyrex All broken frosted glass Broken aquarium glass"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Broken Glass → Recycling",
+        "quote": "Pieces of broken bottles and jars 3 inches or larger"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "ceramic-dish",
+      "bin": "garbage",
+      "prep": [
+        "Donate if still usable"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Mugs, Plates, or Bowls → Garbage",
+        "quote": "Put broken mugs, plates, and bowls in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "mirror",
+      "bin": "garbage",
+      "prep": [
+        "Must fit in the cart with the lid closed"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Mirrors → Garbage",
+        "quote": "Mirrors can go in the garbage: Items must fit in your cart with the lid closed. Don't exceed the weight limits printed on your cart."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty and clean",
+        "Cap on is OK"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "caps-on"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Bottles → Recycling",
+        "quote": "Empty, clean plastic bottles Plastic bottle caps can be recycled, if attached to the empty bottle"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-jug",
+      "bin": "recycling",
+      "prep": [
+        "Clean, empty, dry",
+        "Cap attached"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "dry",
+        "caps-on"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Jugs → Recycling",
+        "quote": "Clean, empty, and dry milk, juice, and laundry detergent jugs go in the recycling. Plastic lids and caps can be recycled if attached to the bottle."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "shampoo-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Clean, empty, dry",
+        "Pump tops go in the garbage"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Shampoo, Lotion, and Hair or Skin Care Bottles → Recycling",
+        "quote": "Clean, Empty, and Dry shampoo and lotion bottles go in the recycling. Plastic lids and caps can be recycled if attached to the bottle."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-tub",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Tubs → Recycling",
+        "quote": "Plastic food containers for yogurt, margarine, dips, salsa, salad greens, etc."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-clamshell",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "dirty",
+          "trigger": "dirty",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → To-Go or Take-Out Containers → Garbage",
+            "quote": "All Styrofoam containers Dirty plastic containers that are not marked \"Compostable\" or \"#7 PLA\" Dirty plastic-coated (shiny) paper containers"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → To-Go or Take-Out Containers → Recycling",
+        "quote": "Clean, Empty, and Dry plastic containers (typically black, white, beige, or clear in color) Clean, Empty, and Dry plastic-coated paper containers (for example, a container often used for take-out in Chinese restaurants) Clean, Empty, and Dry paper containers…"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-cup",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "variants": [
+        {
+          "when": "dirty",
+          "trigger": "dirty",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Plastic Cups or Utensils → Garbage",
+            "quote": "Dirty plastic cups Plastic utensils Styrofoam cups Plastic plates"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Cups or Utensils → Recycling",
+        "quote": "Empty and clean plastic cups"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-lid",
+      "bin": "recycling",
+      "conditions": [
+        "min-3in"
+      ],
+      "variants": [
+        {
+          "when": "smaller than 3 inches across",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Deli, Coffee, or Soft Drink Lids → Garbage",
+            "quote": "Lids less than 3 inches in diameter go in the garbage."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Deli, Coffee, or Soft Drink Lids → Recycling",
+        "quote": "Lids 3 inches in diameter or larger go in the recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-cutlery",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Cups or Utensils → Garbage",
+        "quote": "Dirty plastic cups Plastic utensils Styrofoam cups Plastic plates"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bag",
+      "bin": "garbage",
+      "prep": [
+        "Clean bags can go to a participating grocery store drop-off"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Grocery or Shopping Bags → Garbage",
+        "quote": "Plastic bags that are wet or food-soiled Plastic produce bags Single plastic bags"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-film",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic - Bags, Wrap and Film → Garbage",
+        "quote": "Plastic bags that are wet or food-soiled Plastic produce bags Single plastic bags Bubble wrap"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "zip-bag",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Ziploc Bags → Garbage",
+        "quote": "Ziploc or other plastic food bags go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "bubble-wrap",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic - Bags, Wrap and Film → Garbage",
+        "quote": "Plastic bags that are wet or food-soiled Plastic produce bags Single plastic bags Bubble wrap"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-mailer",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Mailers, Paper Mailers, and Paper Bubble Wrap Envelopes → Garbage",
+        "quote": "At home, put plastic bag mailers/envelopes in the garbage. They are not accepted in home recycling carts. Plastic mailer Padded paper mailer/bubble wrap mailer"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "chip-bag",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Chip Bags → Garbage",
+        "quote": "Chip bags go in the garbage because they are made from several different materials that can't be separated for recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "stand-up-pouch",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Stand-up Pouches → Garbage",
+        "quote": "Plastic Stand-Up pouches, like Red Mill Oatmeal Pouches, that sit upright on shelves in their plastic packaging are garbage. These stand-up pouches become contaminants in the recycling process and are not recyclable."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-cup",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Styrofoam Cups → Garbage",
+        "quote": "Styrofoam cups go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-takeout",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → To-Go or Take-Out Containers → Garbage",
+        "quote": "All Styrofoam containers Dirty plastic containers that are not marked \"Compostable\" or \"#7 PLA\" Dirty plastic-coated (shiny) paper containers"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-block",
+      "bin": "garbage",
+      "prep": [
+        "Never in mixed recycling",
+        "Free Special Item pickup can recycle Styrofoam blocks"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Foam Blocks → Garbage",
+        "quote": "Styrofoam, polyurethane foam blocks, packing peanuts, and foam packing sheets go in the garbage. Packing peanuts must be bagged and tied closed before placing in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "packing-peanuts",
+      "bin": "garbage",
+      "prep": [
+        "Put in a plastic bag and tie it closed"
+      ],
+      "conditions": [
+        "bagged-tied"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Packing Peanuts → Garbage",
+        "quote": "Put packing peanuts in a plastic bag and tie closed. Then put in the garbage. Corn starch peanuts, dissolvable peanuts, biodegradable peanuts, or any packing peanuts labeled in a way that suggest they may breakdown naturally, go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-meat-tray",
+      "bin": "garbage",
+      "variants": [
+        {
+          "when": "brown or tan plant-based tray",
+          "trigger": "other",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Meat Trays → Food & yard waste",
+            "quote": "Brown or tan trays for meat, poultry, and fish are made of compostable material and go in the food and yard waste."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Meat Trays → Garbage",
+        "quote": "Any other color of foam meat tray and the plastic absorbent insert go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "straw",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Straws → Garbage",
+        "quote": "Plastic straws and straws that you are unable to verify that they are approved compostable go into the garbage. Plastic straws are not recyclable."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "flower-pot",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plant Pots → Recycling",
+        "quote": "Empty and rinsed plastic plant pots go in the recycling."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bucket",
+      "bin": "recycling",
+      "conditions": [
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Buckets and Carts → Recycling",
+        "quote": "Clean buckets and carts go in your curbside recycling cart or can be set at the curb next to your cart."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-toy",
+      "bin": "recycling",
+      "prep": [
+        "Rigid plastic, 3 feet or less on all sides",
+        "Remove batteries"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Toys or Sporting Goods → Recycling",
+        "quote": "Toys and sporting equipment made of metal that are 2 feet or less on all sides. Can include small amounts of attached plastic, rubber, or wood. Clean rigid plastic toys and sporting equipment 3 feet or less on all sides."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pill-bottle",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "min-3in"
+      ],
+      "variants": [
+        {
+          "when": "orange/brown prescription vial, or under 3 inches",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Medicine Bottles → Garbage",
+            "quote": "Clear plastic prescription medicine vials go the garbage. These are often orange or brown. These are made from a different type of plastic that is too brittle to recycle. Plastic medicine bottles smaller than 3 inches should go in the garbage."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Medicine Bottles → Recycling",
+        "quote": "Pill bottles, such as aspirin or vitamin bottles, go in the recycling. These are often white, clear, or colors other than orange."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "toothpaste-tube",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Plastic Tubes and Plastic Fencing → Garbage",
+        "quote": "Some toothpaste tubes pay be labelled \"recyclable\" but they are not. Please put them in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-pod",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Coffee Pods → Garbage",
+        "quote": "Coffee pods smaller than 3 inches. Wrappers should go in the garbage."
+      },
+      "verified": true,
+      "note": "Pods larger than 3 inches may be recycled; most are smaller."
+    },
+    {
+      "itemId": "blister-pack",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Blister Packages → Garbage",
+        "quote": "Put all blister packages in the garbage. They aren't recyclable. Blister packages are the clear hard-to-open plastic packaging from items such as batteries, toys, and small electronics."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "compostable-cup",
+      "bin": "compost",
+      "prep": [
+        "Must be food packaging explicitly labeled “#7 PLA” or “Compostable”"
+      ],
+      "conditions": [
+        "labeled-compostable"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → PLA → Food & yard waste",
+        "quote": "Food packaging explicitly labelled #7 PLA is compostable in Seattle’s curbside collection system. It goes in the Food and Yard Waste container. See Compostable Food Service Items for greater detail on compostable food service materials."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "six-pack-rings",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → 6-Pack Plastic Carrier → Garbage",
+        "quote": "The flexible 6-pack carriers are garbage. This includes carriers for sports drinks, water bottles, and more rigid carriers for 25-ounces or 32-ounces metal beverage cans."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "food-scraps",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Food Scraps → Food & yard waste",
+        "quote": "Fruit and vegetables (including pits and seeds) Bread, pasta, rice, and grains (cooked and uncooked) Eggshells and nutshells Coffee grounds, filters, and tea bags Meat, fish, and chicken Dairy products like milk, butter, and cheese Flour, sugar Protein powder…"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "meat-bones",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Food Scraps → Food & yard waste",
+        "quote": "Meat, fish, and chicken"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-grounds",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Coffee Filters → Food & yard waste",
+        "quote": "Paper coffee filters are compostable and go in the food and yard waste together with coffee grounds."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "tea-bag",
+      "bin": "compost",
+      "prep": [
+        "Remove staples"
+      ],
+      "variants": [
+        {
+          "when": "plastic mesh bag",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Tea Bags → Garbage",
+            "quote": "Plastic mesh tea bags go in the garbage."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Tea Bags → Food & yard waste",
+        "quote": "Paper tea bags can go in the compost. Remove the staples and put those in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "eggshells",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Food Scraps → Food & yard waste",
+        "quote": "Eggshells and nutshells"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "yard-waste",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Leaves, seeds, or Non-Woody Yard Waste → Food & yard waste",
+        "quote": "Leaves, seeds, and non-woody yard waste go in the food and yard waste. Items must fit in your cart with the lid closed. Don't exceed the weight limits printed on your cart."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cooking-oil",
+      "bin": "compost",
+      "prep": [
+        "Wipe up with paper towel or newspaper"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Fats, Cooking Oils, Grease → Food & yard waste",
+        "quote": "Small amounts of oil and grease can be wiped up by paper towels or newspaper and placed in the food and yard waste container (compost)."
+      },
+      "verified": true,
+      "note": "Liquid oil (up to 2 gallons) can be set out next to the recycling cart in labeled 1-gallon jugs."
+    },
+    {
+      "itemId": "wood-chopsticks",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Chopsticks → Food & yard waste",
+        "quote": "Uncoated, wooden chopsticks can go in the compost."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cork",
+      "bin": "garbage",
+      "prep": [
+        "ReCORK drop-off locations recycle corks"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Corks → Garbage",
+        "quote": "Corks, both natural and synthetic (including those made out of sugarcane), go in the garbage. Natural corks are too dense to compost. Synthetic corks are made of various materials and are not recyclable."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "compostable-bag",
+      "bin": "compost",
+      "conditions": [
+        "labeled-compostable"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Compostable Bags → Food & yard waste",
+        "quote": "Bags labeled \"Compostable\" from approved brands go in the food and yard waste. Approved compostable plastic bags are green or brown tinted and are clearly labeled ‘Compostable’. Look for certification marks from brands such as “BPI”, TÜV, or CMA."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "diaper",
+      "bin": "garbage",
+      "prep": [
+        "Bag and tie off"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Disposable Diapers → Garbage",
+        "quote": "Put all disposable (even if marked \"compostable\") diapers in a bag, tie off, and place in garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pet-waste",
+      "bin": "garbage",
+      "prep": [
+        "Bag it and tie it off"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Pet Waste, Litter and Feces → Garbage",
+        "quote": "All pet waste goes into garbage bins or pet waste stations. Bag pet waste, used cat litter, and feces. Tie off the bags and put in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "kitty-litter",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Pet Waste, Litter and Feces → Garbage",
+        "quote": "All pet waste goes into garbage bins or pet waste stations. Bag pet waste, used cat litter, and feces. Tie off the bags and put in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "menstrual-pad",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Menstrual Hygiene Products → Garbage",
+        "quote": "All menstrual hygiene products, including those labeled compostable, go in the garbage. Do not flush menstrual hygiene products down a toilet. This can clog pipes and lead to sewer backups. Learn more about What To Flush"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wipes",
+      "bin": "garbage",
+      "prep": [
+        "Never flush, even if labeled “flushable”"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Flushable Wipes → Garbage",
+        "quote": "Baby wipes, wet wipes, cleaning wipes, and any wipes labeled \"flushable\" go in your garbage. If flushed down your toilet, they can clog your sewer pipes."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cotton-swab",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Cotton Swabs and Cotton Balls → Garbage",
+        "quote": "All cotton swabs and cotton balls go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "face-mask",
+      "bin": "garbage",
+      "prep": [
+        "Cut the ear loops"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Medical Equipment and Personal Protective Equipment (PPE) → Garbage",
+        "quote": "All face masks, gloves, and other personal protective equipment (PPE) go in the garbage. Latex gloves used in a non-medical context go in the garbage. It does not matter what material the mask is made of. Cut loops on masks before disposal."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "battery",
+      "bin": "special",
+      "prep": [
+        "Drop off free at a transfer station",
+        "Tape each end"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Household Batteries → General",
+        "quote": "Batteries are NOT allowed in the garbage"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cfl-bulb",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Light Bulbs → Hazardous waste",
+        "quote": "Bring up to 10 fluorescent tubes and CFLs per trip to a household hazardous waste facility or to a LightRecycle location. No fee."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "led-bulb",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Light Bulbs → Garbage",
+        "quote": "Incandescent, LED, Halogen, LED commercial downlights and Xenon light bulbs go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "incandescent-bulb",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Light Bulbs → Garbage",
+        "quote": "Incandescent, LED, Halogen, LED commercial downlights and Xenon light bulbs go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "electronics",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Cell Phones and Batteries → Hazardous waste",
+        "quote": "Do not put cell phones containing batteries in garbage or curbside recycling bins. Batteries contain hazardous substances and have the potential to cause fires when improperly disposed."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cables",
+      "bin": "garbage",
+      "prep": [
+        "Electronics recyclers accept cords for metal recovery"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Wire, Cables, or Cords → Garbage",
+        "quote": "Wires, cables, cords, and plastic can go in the garbage."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "vape",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → E-cigarettes, Vaping Devices, and Cigarettes → Hazardous waste",
+        "quote": "E-cigarettes or other vape devices, and e-liquid waste should not be thrown in the regular trash or flushed down a toilet or sink. Bring vape devices and components to a household hazardous waste facility for safe disposal. No fees."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paint",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Paint, Paint Thinner, and Paint Cans → Drop-off",
+        "quote": "Drop off leftover architectural paint products for free at a PaintCare drop-off site. Accepted products include latex paint, oil-based paint, stain, varnish, and more. No fee."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "propane-canister",
+      "bin": "garbage",
+      "conditions": [
+        "empty"
+      ],
+      "variants": [
+        {
+          "when": "contains any gas",
+          "trigger": "other",
+          "bin": "special",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Small Gas Canisters → Hazardous waste",
+            "quote": "Small gas canisters with any amount of gas or butane can be taken to a household hazardous waste facility . No fee."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Small Gas Canisters → Garbage",
+        "quote": "Empty butane and gas canisters under 2 pounds can go in the garbage."
+      },
+      "verified": true,
+      "note": "Never in recycling: explosion hazard at the sorting facility."
+    },
+    {
+      "itemId": "medicine",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Medicines → Drop-off",
+        "quote": "Bring medicines to a secure medicine return site. Find locations here ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "sharps",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Sharps → Drop-off",
+        "quote": "Sharps can be dropped off at locations througout the city. View a map of locations ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "clothing",
+      "bin": "reuse",
+      "variants": [
+        {
+          "when": "worn out or damaged",
+          "trigger": "other",
+          "bin": "special",
+          "citation": {
+            "sourceId": "sea-wdig",
+            "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+            "section": "Where Does It Go? → Clothes or Shoes → Drop-off",
+            "quote": "Stained, worn out, ripped, or damaged clothing and shoes can be turned into new products through Threadcycle . Some local thrift and second-hand stores are partners and will accept these items at their regular collection or drop box locations."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Clothes or Shoes → Donate",
+        "quote": "Donate gently used clothing to a local thrift store ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "garden-hose",
+      "bin": "garbage",
+      "prep": [
+        "Cut it to fit in the cart"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → Garden Hoses → Garbage",
+        "quote": "Hoses go in the garbage. Cut hose into pieces if it doesn't fit in your cart with the lid closed."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cd-dvd",
+      "bin": "garbage",
+      "prep": [
+        "Donate if still working"
+      ],
+      "citation": {
+        "sourceId": "sea-wdig",
+        "url": "https://www.seattle.gov/utilities/your-services/collection-and-disposal/where-does-it-go",
+        "section": "Where Does It Go? → CDs, DVDs, Records, Video Tapes, and Floppy Disks → Garbage",
+        "quote": "CDs DVDs Floppy discs CD and DVD cases Video tapes Records Vinyl records"
+      },
+      "verified": true
+    }
+  ]
+}

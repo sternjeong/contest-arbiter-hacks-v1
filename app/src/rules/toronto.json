@@ -1,0 +1,1529 @@
+{
+  "$schema": "./ruleset.schema.json",
+  "schemaVersion": 1,
+  "city": {
+    "id": "toronto",
+    "name": "Toronto",
+    "region": "Ontario, Canada",
+    "authority": "City of Toronto (Blue Bin run by Circular Materials)",
+    "flag": "🇨🇦"
+  },
+  "bins": {
+    "recycling": {
+      "label": "Blue Bin",
+      "short": "Blue Bin"
+    },
+    "compost": {
+      "label": "Green Bin (organics)",
+      "short": "Green Bin"
+    },
+    "garbage": {
+      "label": "Garbage Bin",
+      "short": "Garbage"
+    },
+    "special": {
+      "label": "Depot, deposit return or special collection",
+      "short": "Special"
+    },
+    "reuse": {
+      "label": "Donate or reuse",
+      "short": "Reuse"
+    }
+  },
+  "retrieved": "2026-11-12",
+  "sources": [
+    {
+      "id": "tor-ww",
+      "title": "City of Toronto: Waste Wizard",
+      "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+      "publisher": "City of Toronto",
+      "retrieved": "2026-11-12"
+    }
+  ],
+  "notes": [
+    "Residential Blue Bin recycling is now run by Circular Materials (producer responsibility). The Waste Wizard still contains a few older entries that contradict the new Blue Bin list; SortLocal flags those as unverified."
+  ],
+  "general": [
+    {
+      "id": "clean",
+      "text": "Containers must be empty and free from food residue.",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → Blue Bin",
+        "quote": "Empty and free from food residue."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "itemId": "cardboard-box",
+      "bin": "recycling",
+      "prep": [
+        "Flatten",
+        "No larger than 60 x 60 cm"
+      ],
+      "conditions": [
+        "flatten"
+      ],
+      "variants": [
+        {
+          "when": "food-soiled",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “pizza boxes (food-soiled)” → Green Bin",
+            "quote": "Remove any plastic pieces and place those in the Garbage Bin . Place this item in the Green Bin ."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “cardboard boxes” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Flatten. No larger than 60 x 60 cm."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pizza-box",
+      "bin": "compost",
+      "prep": [
+        "Remove plastic pieces (they go in the garbage)"
+      ],
+      "variants": [
+        {
+          "when": "clean, no grease",
+          "trigger": "other",
+          "bin": "recycling",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “pizza boxes (unsoiled)” → Blue Bin",
+            "quote": "Place this item in the Blue Bin (Recycling). Flatten. No larger than 60 x 60 cm."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “pizza boxes (food-soiled)” → Green Bin",
+        "quote": "Remove any plastic pieces and place those in the Garbage Bin . Place this item in the Green Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cereal-box",
+      "bin": "recycling",
+      "prep": [
+        "Flatten",
+        "Empty it"
+      ],
+      "conditions": [
+        "flatten",
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “cereal boxes” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Flatten. Empty."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "newspaper",
+      "bin": "recycling",
+      "prep": [
+        "Remove plastic bags and elastic bands"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “newspapers” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Place shredded paper in a tied clear plastic bag. Separate from plastic bags used to cover items, remove elastic bands. Remove rope handle from bags. Do not include soft or hard covered books/novels."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "magazine",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “magazines” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Place shredded paper in a tied clear plastic bag. Separate from plastic bags used to cover items, remove elastic bands. Remove rope handle from bags. Do not include soft or hard covered books/novels."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "junk-mail",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “junk mail” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Place shredded paper in a tied clear plastic bag. Separate from plastic bags used to cover items, remove elastic bands. Remove rope handle from bags. Do not include soft or hard covered books/novels."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "shredded-paper",
+      "bin": "recycling",
+      "prep": [
+        "Place in a tied clear plastic bag"
+      ],
+      "conditions": [
+        "bag-shredded"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “shredded paper” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Place shredded paper in a tied clear plastic bag. Separate from plastic bags used to cover items, remove elastic bands. Remove rope handle from bags. Do not include soft or hard covered books/novels."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-bag",
+      "bin": "recycling",
+      "conditions": [
+        "clean"
+      ],
+      "variants": [
+        {
+          "when": "food-soiled",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “paper bags (food-soiled)” → Green Bin",
+            "quote": "Remove any non-paper handles and components (e.g. ribbons, rope, grommets) and place those in the Garbage Bin. If lined with plastic (can be revealed by ripping slowly), then place in the Garbage Bin. Otherwise, place this item in the Green Bin ."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper bags (unsoiled)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-coffee-cup",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Remove the lid"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-off"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper coffee cups” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Remove lids."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "milk-carton",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Leave the lid on"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “milk cartons” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "juice-box",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Leave the lid on"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “juice boxes” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "egg-carton-paper",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper egg cartons” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Flatten. Empty."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-towel",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "soiled with chemicals",
+          "trigger": "dirty",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “paper towels” → Green Bin",
+            "quote": "Place this item in the Green Bin . If soiled with chemicals such as cleaning products, place in the Garbage Bin."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper towels” → Green Bin",
+        "quote": "Place this item in the Green Bin . If soiled with chemicals such as cleaning products, place in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "tissues",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “facial tissues” → Green Bin",
+        "quote": "Place this item in the Green Bin . If soiled with chemicals such as cleaning products, place in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-plate",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "lined with wax or plastic",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “paper plates (food-soiled)” → Green Bin",
+            "quote": "If lined with wax or plastic (can be revealed by ripping slowly), then place this item in the Garbage Bin . Otherwise, place this item in the Green Bin ."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper plates (food-soiled)” → Green Bin",
+        "quote": "If lined with wax or plastic (can be revealed by ripping slowly), then place this item in the Garbage Bin . Otherwise, place this item in the Green Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cardboard-tube",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “toilet paper rolls” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Flatten. Empty."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wrapping-paper",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “gift wrapping paper” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Place shredded paper in a tied clear plastic bag. Separate from plastic bags used to cover items, remove elastic bands. Remove rope handle from bags. Do not include soft or hard covered books/novels."
+      },
+      "verified": true,
+      "note": "Toronto also lists metallic gift wrapping paper as Blue Bin."
+    },
+    {
+      "itemId": "receipt",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “sales receipts (shiny/thermal paper)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Place shredded paper in a tied clear plastic bag. Separate from plastic bags used to cover items, remove elastic bands. Remove rope handle from bags. Do not include soft or hard covered books/novels."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "hardcover-book",
+      "bin": "garbage",
+      "prep": [
+        "Donate if in good condition"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “hardcover books” → Garbage",
+        "quote": "Consider donating books that are in good condition to non-profit organizations or bringing to a Community Environment Day . Alternatively, place this item in the Garbage Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "ice-cream-carton",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Remove the lid"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-off"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper ice cream boxes/cartons” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Remove lids."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "frozen-food-box",
+      "bin": "recycling",
+      "conditions": [
+        "flatten",
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “frozen food box” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Flatten. Empty."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-can",
+      "bin": "recycling",
+      "prep": [
+        "Empty and rinse",
+        "Beer and other alcohol cans go back to The Beer Store"
+      ],
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “aluminum cans” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "beer-can",
+      "bin": "special",
+      "prep": [
+        "Return to The Beer Store for the deposit"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “beer cans” → Not Accepted",
+        "quote": "Alcohol containers can be returned for deposit to the Beer Store. This item cannot go in the Blue Bin (recycling) and is not accepted by the City of Toronto."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "steel-can",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “food cans” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-foil",
+      "bin": "recycling",
+      "prep": [
+        "Remove food",
+        "Ball it up"
+      ],
+      "conditions": [
+        "clean",
+        "ball-up"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “aluminum foil” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Ball up aluminum foil."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-tray",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “aluminum trays” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Ball up aluminum foil."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aerosol-can",
+      "bin": "recycling",
+      "prep": [
+        "Empty",
+        "Lid on"
+      ],
+      "conditions": [
+        "empty",
+        "lid-on"
+      ],
+      "variants": [
+        {
+          "when": "still contains product",
+          "trigger": "other",
+          "bin": "special",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “aerosol cans (empty)” → Blue Bin",
+            "quote": "Place this item in the Blue Bin (Recycling). Empty. Lids on. Cans containing product must be disposed of as Household Hazardous Waste."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “aerosol cans (empty)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty. Lids on. Cans containing product must be disposed of as Household Hazardous Waste."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "metal-jar-lid",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “glass jar lids” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pots-pans",
+      "bin": "garbage",
+      "prep": [
+        "Donate if still usable",
+        "Some Drop-Off Depots take metal pots/pans as scrap metal"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “cooking pots/pans (any material)” → Garbage",
+        "quote": "Consider donating reusable items or bringing to a Community Environment Day . Alternatively, place this item in the Garbage Bin . Metal pots/pans can be brought to certain Drop-Off Depots as scrap metal."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paint-can-empty",
+      "bin": "special",
+      "prep": [
+        "Take to a Drop-Off Depot or Community Environment Day"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “empty paint can” → HHW",
+        "quote": "This item is Household Hazardous Waste (HHW) and MUST NOT be disposed of in the garbage, Blue Bin (recycling), Green Bin (organics), drain, toilet or sewer. Please take this item to one of the City's Drop-Off Depots or Community Environment Days ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wire-hanger",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “wire hangers” → Garbage",
+        "quote": "Place item in the garbage ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "glass-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty and rinse",
+        "Lids off"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-off"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “glass bottles” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Clear and coloured glass. Empty and free from food residue. Lids off. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wine-bottle",
+      "bin": "special",
+      "prep": [
+        "Return to The Beer Store for the deposit"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “wine bottles” → Not Accepted",
+        "quote": "Alcohol containers can be returned for deposit to the Beer Store. This item cannot go in the Blue Bin (recycling) and is not accepted by the City of Toronto."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "glass-jar",
+      "bin": "recycling",
+      "prep": [
+        "Empty and rinse",
+        "Lids off"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-off"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “glass jars” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Clear and coloured glass. Empty and free from food residue. Lids off. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "drinking-glass",
+      "bin": "garbage",
+      "prep": [
+        "Donate if still usable"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “drinking glass” → Garbage",
+        "quote": "Consider donating reusable items. Items can also be dropped off for reuse at Community Environment Days . Alternatively, this item should be placed in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "broken-glass-bottle",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “glass bottles (broken)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Clear and coloured glass. Empty and free from food residue. Lids off. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "ceramic-dish",
+      "bin": "garbage",
+      "prep": [
+        "Donate if still usable"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “ceramic dishes” → Garbage",
+        "quote": "Consider donating reusable items. Items can also be dropped off for reuse at Community Environment Days . Alternatively, this item should be placed in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "mirror",
+      "bin": "garbage",
+      "prep": [
+        "Wrap sharp edges first"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “broken mirror” → Garbage",
+        "quote": "Wrap sharp edges with thick or multi-layered material (e.g. paper, cardboard, soft plastic, fabric) before placing in the Garbage Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty and rinse",
+        "Lid on"
+      ],
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic water bottles” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-jug",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic jugs” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "shampoo-bottle",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic shampoo bottles (empty)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-tub",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “yogurt tubs” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-clamshell",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “clam shell containers” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-cup",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic cups” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-lid",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic coffee cup lid” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-cutlery",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic cutlery” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bag",
+      "bin": "recycling",
+      "prep": [
+        "Empty and free of food residue"
+      ],
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic grocery bags” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-film",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic food wrap” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "zip-bag",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “Ziploc bags” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "bubble-wrap",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “bubble wrap” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-mailer",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic mailing envelopes” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "chip-bag",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “chip bags” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "stand-up-pouch",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “stand-up flexible pouch” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": false,
+      "note": "Source conflict: the Toronto Waste Wizard also lists this keyword under Garbage (stand-up pouch) [Garbage]."
+    },
+    {
+      "itemId": "foam-cup",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “Styrofoam cups” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Place foam packaging peanuts in a tied clear plastic bag. Remove film wrap and absorbent pads from meat trays."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-takeout",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “foam clamshell/takeout container” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Place foam packaging peanuts in a tied clear plastic bag. Remove film wrap and absorbent pads from meat trays."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-block",
+      "bin": "recycling",
+      "conditions": [
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “white Styrofoam” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Place foam packaging peanuts in a tied clear plastic bag. Remove film wrap and absorbent pads from meat trays."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "packing-peanuts",
+      "bin": "recycling",
+      "prep": [
+        "Put in a tied clear plastic bag"
+      ],
+      "conditions": [
+        "bagged-tied"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “foam packaging peanuts” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Place foam packaging peanuts in a tied clear plastic bag. Remove film wrap and absorbent pads from meat trays."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-meat-tray",
+      "bin": "recycling",
+      "prep": [
+        "Remove film wrap and absorbent pad"
+      ],
+      "conditions": [
+        "empty",
+        "clean"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “foam meat trays” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Place foam packaging peanuts in a tied clear plastic bag. Remove film wrap and absorbent pads from meat trays."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "straw",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic straws” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "flower-pot",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic flower pots” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bucket",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic buckets (from packaging)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true,
+      "note": "Toronto lists buckets “from packaging”."
+    },
+    {
+      "itemId": "plastic-toy",
+      "bin": "garbage",
+      "prep": [
+        "Donate if usable",
+        "Remove batteries (hazardous waste)"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic toys” → Garbage",
+        "quote": "Consider donating reusable items to non-profit organizations . Alternatively, this item should be placed in the Garbage Bin after removing any batteries and disposing of them as Household Hazardous Waste ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pill-bottle",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “plastic pill bottles (empty)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "toothpaste-tube",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "lid-on"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “toothpaste tube” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-pod",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “coffee pods/capsules/discs (any material)” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "blister-pack",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “blister packaging” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue. Lids on. Do not include alcoholic beverage containers."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "compostable-cup",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “compostable plastic cups/containers” → Garbage",
+        "quote": "The City does not accept this item in its Green Bin Organics program, even if it is labelled compostable, biodegradable or recyclable. Place this item in the Garbage Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "six-pack-rings",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “6-pack plastic rings” → Blue Bin",
+        "quote": "Place this item in the Blue Bin (Recycling). Empty and free from food residue."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "food-scraps",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “food scraps” → Green Bin",
+        "quote": "Place this item in the Green Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "meat-bones",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “meat (raw and cooked)” → Green Bin",
+        "quote": "Place this item in your Green Bin. Line either your indoor container or outdoor Green Bin with a plastic bag or kraft paper bag. Do not line both."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-grounds",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “coffee grounds” → Green Bin",
+        "quote": "Place this item in the Green Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "tea-bag",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "nylon or silk bag",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “nylon tea bags” → Green Bin",
+            "quote": "Open bag and empty tea into Green Bin . Place bag in Garbage Bin ."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “paper tea bags” → Green Bin",
+        "quote": "Place this item in the Green Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "eggshells",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “eggshell” → Green Bin",
+        "quote": "Place this item in the Green Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "yard-waste",
+      "bin": "special",
+      "prep": [
+        "Separate yard-waste collection: kraft paper bag or rigid open-top container",
+        "Not in plastic bags or boxes"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “leaves” → Yard Waste",
+        "quote": "Place this item in a kraft paper yard waste bag or rigid open-top container (with an external height between 55 cm and 95 cm, with the exception of blue and grey boxes previously used for recycling)."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cooking-oil",
+      "bin": "compost",
+      "prep": [
+        "Let it harden or soak it into a paper towel",
+        "Never pour down the drain"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “cooking oil/grease (small amount)” → Green Bin",
+        "quote": "Never pour down the sink, drain or toilet because it can cause sewer backups in your home and neighbourhood. Either leave it to harden or saturate with a paper towel and then place in the Green Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wood-chopsticks",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “chopsticks” → Garbage",
+        "quote": "Place item in the garbage ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cork",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “wine corks (natural and synthetic/plastic)” → Garbage",
+        "quote": "Place this item in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "diaper",
+      "bin": "compost",
+      "prep": [
+        "Wipes go in the garbage"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “disposable diapers” → Green Bin",
+        "quote": "Place diapers in the Green Bin (organics) . Place any baby wipes in the garbage ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pet-waste",
+      "bin": "compost",
+      "prep": [
+        "Any bag type is fine (bags are removed at processing)"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “dog poop” → Green Bin",
+        "quote": "Place this item in the Green Bin (organics) . Any type of bag (i.e. conventional or compostable plastic) can be used since bags are removed from organics during pre-processing."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "kitty-litter",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "crystal / silica litter",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “crystal kitty litter” → Garbage",
+            "quote": "Place item in the Garbage Bin."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “clay kitty litter” → Green Bin",
+        "quote": "Place this item in the Green Bin (organics) ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "menstrual-pad",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “maxi pads” → Green Bin",
+        "quote": "Place these items in the Green Bin (organics) . If you have received treatment involving radioactivity, please contact the location where you received treatment for advice on how to safely dispose of items soiled with bodily fluids."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wipes",
+      "bin": "garbage",
+      "prep": [
+        "Bag them"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “wet wipes” → Garbage",
+        "quote": "The City does not accept this item in its Green Bin Organics program, even if it is labelled compostable, biodegradable or recyclable. Place this item in the Garbage Bin bagged."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cotton-swab",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “cotton swabs” → Garbage",
+        "quote": "Place item in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "face-mask",
+      "bin": "garbage",
+      "prep": [
+        "Bag them (not loose)"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “disposable face masks” → Garbage",
+        "quote": "Place these items in the garbage bagged (i.e. not loose)."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "battery",
+      "bin": "special",
+      "prep": [
+        "Tape the positive terminal",
+        "Drop-Off Depot or Community Environment Day"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “household battery/batteries” → HHW",
+        "quote": "Batteries are Household Hazardous Waste (HHW) and MUST NOT be disposed of in the garbage, Blue Bin (recycling) or Green Bin (organics)."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cfl-bulb",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “compact fluorescent lights (CFL)” → HHW",
+        "quote": "These contain mercury and MUST be disposed of as Household Hazardous Waste (HHW) . Place in original box or bundle/tape together in groups of 8. Take these to one of the City's Drop-Off Depots or Community Environment Days or a retailer that accepts lighting."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "led-bulb",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “LED (light-emitting diode) light bulbs” → HHW",
+        "quote": "This item is Household Hazardous Waste (HHW) . Take this item to one of the City's Drop-Off Depots or Community Environment Days or a retailer that accepts lighting."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "incandescent-bulb",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “incandescent light bulbs” → HHW",
+        "quote": "This item is Household Hazardous Waste (HHW) . Take this item to one of the City's Drop-Off Depots or Community Environment Days or a retailer that accepts lighting."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "electronics",
+      "bin": "special",
+      "prep": [
+        "Clear bag or open box, 0.5 m from the garbage bin on garbage day",
+        "Or a Drop-Off Depot"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “cell phones” → Electronic Waste",
+        "quote": "Consider donating reusable items. Alternatively, place in a clear plastic bag or in an open cardboard box and set on the ground on Garbage collection day 0.5 metre (2 feet) away from your Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cables",
+      "bin": "special",
+      "prep": [
+        "Set out as electronic waste next to the garbage bin"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “electronic cables/chargers” → Electronic Waste",
+        "quote": "Consider donating reusable items. Alternatively, place in a clear plastic bag or in an open cardboard box and set on the ground on Garbage collection day 0.5 metre (2 feet) away from your Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "vape",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “vapes/vaporizers (with non-removable batteries)” → HHW",
+        "quote": "This item is Household Hazardous Waste (HHW) and MUST NOT be placed in your Garbage Bin, Blue Bin or Green Bin. Please take this item to one of the City's Drop-Off Depots or Community Environment Days ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paint",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “latex paints” → HHW",
+        "quote": "This item is Household Hazardous Waste (HHW) and MUST NOT be placed in your Garbage Bin, Blue Bin, Green Bin or put down the drain, toilet or sewer. Please take this item to one of the City's Drop-Off Depots or Community Environment Days ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "propane-canister",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “propane tanks/cylinders” → HHW",
+        "quote": "This item is Household Hazardous Waste (HHW) , even if empty, and MUST NOT be placed in your Garbage Bin, Blue Bin or Green Bin. Please take this item to one of the City's Drop-Off Depots or Community Environment Days ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "medicine",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “medications” → HHW",
+        "quote": "This item is Household Hazardous Waste and MUST NOT be disposed of in the garbage, Blue Bin (recycling), Green Bin (organics), drain, toilet or sewer. Take this item to any pharmacy, or one of the City's Drop-Off Depots or Community Environment Days ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "sharps",
+      "bin": "special",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “syringes” → HHW",
+        "quote": "This item is Household Hazardous Waste and MUST NOT be disposed of in the garbage, Blue Bin (recycling) or Green Bin (organics)."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "clothing",
+      "bin": "reuse",
+      "variants": [
+        {
+          "when": "not reusable",
+          "trigger": "other",
+          "bin": "garbage",
+          "citation": {
+            "sourceId": "tor-ww",
+            "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+            "section": "Waste Wizard → “clothing” → Garbage",
+            "quote": "Consider donating reusable items or bringing to a Community Environment Day . Alternatively, place this item in the Garbage Bin ."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “clothing” → Garbage",
+        "quote": "Consider donating reusable items or bringing to a Community Environment Day . Alternatively, place this item in the Garbage Bin ."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "garden-hose",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “garden hose” → Garbage",
+        "quote": "Place item in the Garbage Bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cd-dvd",
+      "bin": "garbage",
+      "prep": [
+        "Donate if still working"
+      ],
+      "citation": {
+        "sourceId": "tor-ww",
+        "url": "https://www.toronto.ca/services-payments/recycling-organics-garbage/waste-wizard/",
+        "section": "Waste Wizard → “DVDs” → Garbage",
+        "quote": "Consider donating these items or bringing original (not copies) or unused rewritable ones in cases to Community Environment Days . Alternatively, place this item in the Garbage Bin ."
+      },
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sortlocal.app/schema/ruleset.schema.json",
+  "title": "SortLocal city ruleset",
+  "description": "One city's official sorting guide compiled into machine-readable rules. Every rule must carry a citation to an official source.",
+  "type": "object",
+  "required": ["schemaVersion", "city", "bins", "retrieved", "sources", "general", "rules"],
+  "additionalProperties": false,
+  "definitions": {
+    "bin": { "type": "string", "enum": ["recycling", "compost", "garbage", "special", "reuse"] },
+    "condition": {
+      "type": "string",
+      "enum": ["empty", "clean", "dry", "flatten", "lid-on", "lid-off", "caps-on", "remove-liner", "ball-up", "min-3in", "bag-shredded", "bagged-tied", "labeled-compostable"]
+    },
+    "citation": {
+      "type": "object",
+      "required": ["sourceId", "url", "section", "quote"],
+      "additionalProperties": false,
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "section": { "type": "string", "minLength": 1 },
+        "quote": { "type": "string", "minLength": 5, "maxLength": 600 }
+      }
+    },
+    "binLabel": {
+      "type": "object",
+      "required": ["label", "short"],
+      "additionalProperties": false,
+      "properties": { "label": { "type": "string" }, "short": { "type": "string" } }
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "city": {
+      "type": "object",
+      "required": ["id", "name", "region", "authority"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string" },
+        "region": { "type": "string" },
+        "authority": { "type": "string" },
+        "flag": { "type": "string" }
+      }
+    },
+    "bins": {
+      "type": "object",
+      "required": ["recycling", "compost", "garbage", "special", "reuse"],
+      "additionalProperties": false,
+      "properties": {
+        "recycling": { "$ref": "#/definitions/binLabel" },
+        "compost": { "$ref": "#/definitions/binLabel" },
+        "garbage": { "$ref": "#/definitions/binLabel" },
+        "special": { "$ref": "#/definitions/binLabel" },
+        "reuse": { "$ref": "#/definitions/binLabel" }
+      }
+    },
+    "retrieved": { "type": "string", "format": "date" },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "url", "publisher", "retrieved"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+          "publisher": { "type": "string" },
+          "retrieved": { "type": "string", "format": "date" }
+        }
+      }
+    },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "general": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text", "citation"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "enum": ["loose", "clean", "min-3in"] },
+          "text": { "type": "string" },
+          "citation": { "$ref": "#/definitions/citation" }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["itemId", "bin", "citation", "verified"],
+        "additionalProperties": false,
+        "properties": {
+          "itemId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "bin": { "$ref": "#/definitions/bin" },
+          "prep": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "conditions": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/definitions/condition" } },
+          "variants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["when", "bin", "citation"],
+              "additionalProperties": false,
+              "properties": {
+                "when": { "type": "string", "minLength": 1 },
+                "trigger": { "type": "string", "enum": ["dirty", "other"] },
+                "bin": { "$ref": "#/definitions/bin" },
+                "citation": { "$ref": "#/definitions/citation" }
+              }
+            }
+          },
+          "citation": { "$ref": "#/definitions/citation" },
+          "verified": { "type": "boolean" },
+          "note": { "type": "string" }
+        },
+        "if": { "properties": { "verified": { "const": false } } },
+        "then": { "required": ["note"] }
+      }
+    }
+  }
+}

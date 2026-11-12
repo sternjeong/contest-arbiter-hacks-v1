@@ -1,0 +1,1218 @@
+{
+  "$schema": "./ruleset.schema.json",
+  "schemaVersion": 1,
+  "city": {
+    "id": "sf",
+    "name": "San Francisco",
+    "region": "California, USA",
+    "authority": "SF Environment Department / Recology",
+    "flag": "🇺🇸"
+  },
+  "bins": {
+    "recycling": {
+      "label": "Blue recycling bin",
+      "short": "Recycle"
+    },
+    "compost": {
+      "label": "Green compost bin",
+      "short": "Compost"
+    },
+    "garbage": {
+      "label": "Black landfill bin",
+      "short": "Landfill"
+    },
+    "special": {
+      "label": "Special handling (no curbside bin)",
+      "short": "Special"
+    },
+    "reuse": {
+      "label": "Reuse or donate",
+      "short": "Reuse"
+    }
+  },
+  "retrieved": "2026-11-12",
+  "sources": [
+    {
+      "id": "sf-sfrecycles",
+      "title": "SF Environment Department: SF Recycles item lookup",
+      "url": "https://www.sfenvironment.org/sfrecycles",
+      "publisher": "City and County of San Francisco",
+      "retrieved": "2026-11-12"
+    },
+    {
+      "id": "sf-poster",
+      "title": "SF Environment: Recycle / Compost / Landfill posters (PDF, 2023)",
+      "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+      "publisher": "City and County of San Francisco",
+      "retrieved": "2026-11-12"
+    },
+    {
+      "id": "sf-recology",
+      "title": "Recology: Better at the Bin (San Francisco)",
+      "url": "https://www.recology.com/better-at-the-bin/",
+      "publisher": "Recology",
+      "retrieved": "2026-11-12"
+    }
+  ],
+  "notes": [],
+  "general": [
+    {
+      "id": "loose",
+      "text": "Recyclables go in loose, empty, clean and dry.",
+      "citation": {
+        "sourceId": "sf-recology",
+        "url": "https://www.recology.com/better-at-the-bin/",
+        "section": "Accepted materials",
+        "quote": "Recyclable materials should be loose and remain empty, clean, and dry when placed in the bin to avoid contaminating other materials."
+      }
+    }
+  ],
+  "rules": [
+    {
+      "itemId": "cardboard-box",
+      "bin": "recycling",
+      "prep": [
+        "Break down the box",
+        "Cut away greasy or wet parts"
+      ],
+      "conditions": [
+        "flatten",
+        "clean",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "greasy or food-soiled",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "sf-poster",
+            "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+            "section": "Poster (English column)",
+            "quote": "Greasy pizza boxes and paper bags"
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/cardboard",
+        "section": "SF Recycles → Cardboard",
+        "quote": "Recycling bin Break down boxes, and do not recycle cardboard that is wet or contaminated by food residue or grease. You can recycle clean pieces of cardboard by cutting away the soiled pieces."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pizza-box",
+      "bin": "compost",
+      "variants": [
+        {
+          "when": "clean, no grease",
+          "trigger": "other",
+          "bin": "recycling",
+          "citation": {
+            "sourceId": "sf-sfrecycles",
+            "url": "https://www.sfenvironment.org/sfrecycles/item/cardboard",
+            "section": "SF Recycles → Cardboard",
+            "quote": "Recycling bin Break down boxes, and do not recycle cardboard that is wet or contaminated by food residue or grease. You can recycle clean pieces of cardboard by cutting away the soiled pieces."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/greasy-pizza-boxes",
+        "section": "SF Recycles → Greasy pizza boxes",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cereal-box",
+      "bin": "recycling",
+      "prep": [
+        "Remove the plastic liner"
+      ],
+      "conditions": [
+        "remove-liner"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/cereal-boxes",
+        "section": "SF Recycles → Cereal boxes",
+        "quote": "Recycling bin Remove plastic lining (if any) and bundle with plastic bags."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "newspaper",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/newspapers-magazines",
+        "section": "SF Recycles → Newspapers, magazines",
+        "quote": "Recycling bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "magazine",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/newspapers-magazines",
+        "section": "SF Recycles → Newspapers, magazines",
+        "quote": "Recycling bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "junk-mail",
+      "bin": "recycling",
+      "prep": [
+        "Envelopes with windows are OK"
+      ],
+      "conditions": [
+        "clean",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Clean, dry paper, junk mail, sticky notes, magazines"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "shredded-paper",
+      "bin": "recycling",
+      "prep": [
+        "Seal in a paper bag",
+        "Label it “Shredded Paper”"
+      ],
+      "conditions": [
+        "bag-shredded"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Shredded paper (place in sealed paper bag and label “Shredded Paper”)"
+      },
+      "verified": true,
+      "note": "From the 2023 SF Environment poster; not on a current SF Recycles item page."
+    },
+    {
+      "itemId": "paper-bag",
+      "bin": "recycling",
+      "conditions": [
+        "clean",
+        "dry"
+      ],
+      "variants": [
+        {
+          "when": "greasy or food-stained",
+          "trigger": "dirty",
+          "bin": "compost",
+          "citation": {
+            "sourceId": "sf-sfrecycles",
+            "url": "https://www.sfenvironment.org/sfrecycles/item/paper-bags",
+            "section": "SF Recycles → Paper bags",
+            "quote": "For greasy or food-stained paper, place in the green composting bin."
+          }
+        }
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/paper-bags",
+        "section": "SF Recycles → Paper bags",
+        "quote": "Recycling bin Recycle clean and dry paper only. For greasy or food-stained paper, place in the green composting bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-coffee-cup",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Sleeve and plastic lid can go in too"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/paper-coffee-cups-empty",
+        "section": "SF Recycles → Paper coffee cups (empty)",
+        "quote": "Recycling bin Recycle empty cup, sleeve, and plastic lid."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "milk-carton",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Empty paper milk cartons"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "juice-box",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Empty soup and juice boxes (aseptic containers)"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "egg-carton-paper",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/egg-cartons",
+        "section": "SF Recycles → Egg cartons",
+        "quote": "Recycling bin Paper and plastic egg cartons okay. No polystyrene foam."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-towel",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/paper-towels",
+        "section": "SF Recycles → Paper towels",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "tissues",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/tissues",
+        "section": "SF Recycles → Tissues",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paper-plate",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/paper-plates",
+        "section": "SF Recycles → Paper plates",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cardboard-tube",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/cardboard-tubes",
+        "section": "SF Recycles → Cardboard tubes",
+        "quote": "Recycling bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wrapping-paper",
+      "bin": "recycling",
+      "prep": [
+        "Non-metallic only"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/wrapping-paper-non-metallic",
+        "section": "SF Recycles → Wrapping paper (non-metallic)",
+        "quote": "Recycling bin Metallic wrapping paper is not accepted."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "hardcover-book",
+      "bin": "reuse",
+      "prep": [
+        "Donate to a thrift store or the Friends of the SF Public Library"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/books-reusable",
+        "section": "SF Recycles → Books (reusable)",
+        "quote": "Please reuse or donate Donate books to a local thrift store or to Friends of the San Francisco Public Library's donation center in Potrero Hill."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "ice-cream-carton",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Empty paper ice cream containers"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-can",
+      "bin": "recycling",
+      "prep": [
+        "Empty it"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/aluminum-cans",
+        "section": "SF Recycles → Aluminum cans",
+        "quote": "Recycling bin Empty contents. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "beer-can",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/aluminum-cans",
+        "section": "SF Recycles → Aluminum cans",
+        "quote": "Recycling bin Empty contents. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true,
+      "note": "California CRV containers can also be redeemed at a recycling center."
+    },
+    {
+      "itemId": "steel-can",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Steel (tin) cans"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-foil",
+      "bin": "recycling",
+      "prep": [
+        "Ball it up",
+        "No food"
+      ],
+      "conditions": [
+        "clean",
+        "ball-up"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/aluminum-foil",
+        "section": "SF Recycles → Aluminum foil",
+        "quote": "Recycling bin Make foil into ball. No food."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aluminum-tray",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/aluminum-containers-trays",
+        "section": "SF Recycles → Aluminum containers & trays",
+        "quote": "Recycling bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "aerosol-can",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/spray-cans-empty",
+        "section": "SF Recycles → Spray cans (empty)",
+        "quote": "Special handling. Don't put in any bin."
+      },
+      "verified": false,
+      "note": "Sources disagree: the current SF Recycles page says special handling, but the 2023 SF Environment poster lists “Spray cans (must be empty)” under Recycle. Call Recology to confirm."
+    },
+    {
+      "itemId": "metal-jar-lid",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/jar-lids",
+        "section": "SF Recycles → Jar lids",
+        "quote": "Recycling bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bottle-cap",
+      "bin": "recycling",
+      "prep": [
+        "Best: leave caps screwed on bottles"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/bottle-caps",
+        "section": "SF Recycles → Bottle caps",
+        "quote": "Recycling bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paint-can-empty",
+      "bin": "recycling",
+      "conditions": [
+        "empty",
+        "dry"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/house-paint",
+        "section": "SF Recycles → House Paint",
+        "quote": "Recycle empty and dry small paint cans in blue recycling bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wire-hanger",
+      "bin": "garbage",
+      "prep": [
+        "Better: return to a dry cleaner for reuse"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Wire hangers: take back to a garment cleaner for reuse"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "glass-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Caps and lids are OK"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/glass-bottles-empty",
+        "section": "SF Recycles → Glass bottles (empty)",
+        "quote": "Recycle bin Caps and lids okay. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wine-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Natural corks go in the green bin"
+      ],
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/wine-bottles",
+        "section": "SF Recycles → Wine bottles",
+        "quote": "Recycle bin Empty bottles in the blue bin. Put corks made with natural material in the green bin. CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "glass-jar",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/glass-jars-empty",
+        "section": "SF Recycles → Glass jars (empty)",
+        "quote": "Recycle bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "drinking-glass",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Glass (window and dishware glass)"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "ceramic-dish",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Broken ceramic dishware and glassware"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "mirror",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Mirrors (if not in condition to be reused)"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bottle",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Leave the cap on"
+      ],
+      "conditions": [
+        "empty",
+        "caps-on"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bottles-empty",
+        "section": "SF Recycles → Plastic bottles (empty)",
+        "quote": "Recycle bin CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-jug",
+      "bin": "recycling",
+      "prep": [
+        "Empty it",
+        "Leave the cap on"
+      ],
+      "conditions": [
+        "empty",
+        "caps-on"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bottles-empty",
+        "section": "SF Recycles → Plastic bottles (empty)",
+        "quote": "Recycle bin CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "shampoo-bottle",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bottles-empty",
+        "section": "SF Recycles → Plastic bottles (empty)",
+        "quote": "Recycle bin CRV Bottlebank truck rotates between sites, see their locations and schedule at: https://www.bottlebankca.com/locations"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-tub",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-tubs-lids-empty",
+        "section": "SF Recycles → Plastic tubs, lids (empty)",
+        "quote": "Recycle bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-clamshell",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-clamshells-empty",
+        "section": "SF Recycles → Plastic clamshells (empty)",
+        "quote": "Recycle bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-cup",
+      "bin": "recycling",
+      "conditions": [
+        "empty"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-cups-plates-empty",
+        "section": "SF Recycles → Plastic cups, plates (empty)",
+        "quote": "Recycle bin No polystyrene foam. If labeled \"compostable,\" put in green bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-lid",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-coffee-cup-lids",
+        "section": "SF Recycles → Plastic coffee cup lids",
+        "quote": "Recycle bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bag",
+      "bin": "special",
+      "prep": [
+        "Reuse it, or return to a store take-back / drop-off location"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bags-plastic-wrap",
+        "section": "SF Recycles → Plastic bags, plastic wrap",
+        "quote": "Please reuse or donate Use a take-back service or drop-off location near you."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-film",
+      "bin": "special",
+      "prep": [
+        "Return to a take-back / drop-off location"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bags-plastic-wrap",
+        "section": "SF Recycles → Plastic bags, plastic wrap",
+        "quote": "Please reuse or donate Use a take-back service or drop-off location near you."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "zip-bag",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bags-plastic-wrap",
+        "section": "SF Recycles → Plastic bags, plastic wrap",
+        "quote": "Please reuse or donate Use a take-back service or drop-off location near you."
+      },
+      "verified": false,
+      "note": "Inferred from the SF Recycles “Plastic bags, plastic wrap” page; zip-top bags are not named explicitly."
+    },
+    {
+      "itemId": "bubble-wrap",
+      "bin": "special",
+      "prep": [
+        "Return to a take-back / drop-off location"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bags-plastic-wrap",
+        "section": "SF Recycles → Plastic bags, plastic wrap",
+        "quote": "Please reuse or donate Use a take-back service or drop-off location near you."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "chip-bag",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/shiny-food-wrappers",
+        "section": "SF Recycles → Shiny food wrappers",
+        "quote": "Landfill bin The shiny lining in snack packaging is made of a mix of materials. Since recycling plants cannot separate the layers, these wrappers and bags cannot be recycled."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-cup",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/styrofoamtm-cups-polystyrene-foam-cups",
+        "section": "SF Recycles → Styrofoam™ cups (polystyrene foam cups)",
+        "quote": "Landfill bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-takeout",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Polystyrene foam"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-block",
+      "bin": "special",
+      "prep": [
+        "Clean blocks only: drop off with Recology"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/styrofoamtm-blocks-polystyrene-foam",
+        "section": "SF Recycles → Styrofoam™ blocks (polystyrene foam)",
+        "quote": "Special handling. Don't put in any bin. Drop-off guidelines for Styrofoam recycling Only clean Styrofoam is accepted—this means it must be free of debris and must not have come into contact with raw meat or fish."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "packing-peanuts",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/styrofoamtm-peanuts-polystyrene-foam",
+        "section": "SF Recycles → Styrofoam™ peanuts (polystyrene foam)",
+        "quote": "Landfill bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "foam-meat-tray",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Polystyrene foam"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "flower-pot",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Flower pots and trays"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-bucket",
+      "bin": "recycling",
+      "prep": [
+        "Wire handle is OK"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/plastic-bucket",
+        "section": "SF Recycles → Plastic bucket",
+        "quote": "Recycle bin Wire handle okay."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "plastic-toy",
+      "bin": "recycling",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Toys (no electronics, metal, or batteries)"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "toothpaste-tube",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/toothpaste-tubes-cream-ointment-empty",
+        "section": "SF Recycles → Toothpaste tubes, cream, ointment (empty)",
+        "quote": "Landfill bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "compostable-cup",
+      "bin": "compost",
+      "conditions": [
+        "labeled-compostable"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/compostable-cups-plates-bowls-utensils",
+        "section": "SF Recycles → Compostable cups, plates, bowls, utensils",
+        "quote": "Compost bin Item must be labeled \"compostable.\""
+      },
+      "verified": true
+    },
+    {
+      "itemId": "food-scraps",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/food-scraps-spoiled-food",
+        "section": "SF Recycles → Food scraps, spoiled food",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "meat-bones",
+      "bin": "compost",
+      "prep": [
+        "Bones are OK"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/meat",
+        "section": "SF Recycles → Meat",
+        "quote": "Compost bin Bones okay."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "coffee-grounds",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/coffee-grounds-coffee-filter",
+        "section": "SF Recycles → Coffee grounds, coffee filter",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "tea-bag",
+      "bin": "compost",
+      "prep": [
+        "Remove staples",
+        "Plastic tea bags go in landfill"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/tea-bags",
+        "section": "SF Recycles → Tea bags",
+        "quote": "Compost bin Some tea bags have plastic and don’t belong in the compost bin. Compost the herbs. Compost paper tea bags and landfill plastic ones. Remove staples before composting paper tea bags."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "eggshells",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/eggshells",
+        "section": "SF Recycles → Eggshells",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "yard-waste",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/leaves",
+        "section": "SF Recycles → Leaves",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cooking-oil",
+      "bin": "compost",
+      "prep": [
+        "Soak up with a paper towel"
+      ],
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Cooking grease: Small amounts can be soaked up with a paper towel and composted."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "wood-chopsticks",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/wood-chopsticks-coffee-stirrers-toothpicks",
+        "section": "SF Recycles → Wood chopsticks, coffee stirrers, toothpicks",
+        "quote": "Compost bin"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cork",
+      "bin": "compost",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/corks-natural",
+        "section": "SF Recycles → Corks, natural",
+        "quote": "Compost bin Compost natural corks in your green composting bin. Place composite and plastic corks in the black trash bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "compostable-bag",
+      "bin": "compost",
+      "conditions": [
+        "labeled-compostable"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/compostable-bags",
+        "section": "SF Recycles → Compostable bags",
+        "quote": "Compost bin Item must be labeled \"compostable.\""
+      },
+      "verified": true
+    },
+    {
+      "itemId": "diaper",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Diapers"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "pet-waste",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/dog-or-cat-poop-kitty-litter",
+        "section": "SF Recycles → Dog or cat poop, kitty litter",
+        "quote": "Landfill bin For health and safety, always put in the black bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "kitty-litter",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/dog-or-cat-poop-kitty-litter",
+        "section": "SF Recycles → Dog or cat poop, kitty litter",
+        "quote": "Landfill bin For health and safety, always put in the black bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "menstrual-pad",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Menstrual/sanitary products"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cotton-swab",
+      "bin": "compost",
+      "prep": [
+        "Paper stems only, no plastic"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/cotton-balls-swabs",
+        "section": "SF Recycles → Cotton balls, swabs",
+        "quote": "Compost bin No plastic stems."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "face-mask",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/disposable-masks",
+        "section": "SF Recycles → Disposable masks",
+        "quote": "Landfill bin disposable masks"
+      },
+      "verified": true
+    },
+    {
+      "itemId": "battery",
+      "bin": "special",
+      "prep": [
+        "Tape the contacts of lithium batteries",
+        "Houses: clear plastic bag on top of the black bin"
+      ],
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/household-batteries",
+        "section": "SF Recycles → Household batteries",
+        "quote": "Special handling. Don't put in any bin. PUT CLEAR TAPE OVER THE CONTACTS OF LITHIUM BATTERIES. Residents in a house or small apartment complex, put loose household batteries in a clear plastic bag and place on top of the black/gray bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cfl-bulb",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/light-bulbs-cfls-and-tubes",
+        "section": "SF Recycles → Light bulbs (CFLs and tubes)",
+        "quote": "Special handling. Don't put in any bin. Many older types of energy efficient lighting contain toxic mercury. Max 5 bulbs or tubes per day. No business waste at Retail Take-Back locations."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "led-bulb",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/light-bulbs-led",
+        "section": "SF Recycles → Light bulbs (LED)",
+        "quote": "Special handling. Don't put in any bin. Many LED lighting products contain toxic metals other than mercury. Max 5 bulbs or tubes per day. No business waste at Retail Take-Back locations."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "incandescent-bulb",
+      "bin": "garbage",
+      "citation": {
+        "sourceId": "sf-poster",
+        "url": "https://sfenvironment.org/files/sfe_zw_posters_85x11_vertical_trilingual.pdf",
+        "section": "Poster (English column)",
+        "quote": "Light bulbs: incandescent only."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "electronics",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/battery-embedded-products",
+        "section": "SF Recycles → Battery embedded products",
+        "quote": "Special handling. Don't put in any bin. Electronic devices that have a non-removable, built-in rechargeable battery—commonly found in smartphones, tablets, laptops, e-readers, wireless headphones, and some small appliances or tools."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "vape",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/vapes",
+        "section": "SF Recycles → Vapes",
+        "quote": "Special handling. Don't put in any bin. Vaping devices contain a battery, nicotine, flavorings, and other chemicals that do not belong in any of the three bins (landfill, recycling, and composting)."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "paint",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/house-paint",
+        "section": "SF Recycles → House Paint",
+        "quote": "Special handling. Don't put in any bin. Includes indoor and outdoor, latex and oil-base paints. Maximum 5 gallons per day at Retail Take-Back locations. No business waste. Recycle empty and dry small paint cans in blue recycling bin."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "propane-canister",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/empty-one-pound-disposable-propane-or-butane-gas-cylinder",
+        "section": "SF Recycles → Empty one-pound disposable propane or butane gas cylinder",
+        "quote": "Special handling. Don't put in any bin. Search below for retail take-back locations. No business waste accepted. Handle cylinders that are not empty as hazardous waste."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "medicine",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/medicine",
+        "section": "SF Recycles → Medicine",
+        "quote": "Special handling. Don't put in any bin. Take to a designated drop-off location, or request a mail-back package free of charge. No business waste."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "sharps",
+      "bin": "special",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/syringes-needles",
+        "section": "SF Recycles → Syringes, needles",
+        "quote": "Special handling. Don't put in any bin. Take to a designated drop-off location or request a free mail-back package. Drop-off locations DO NOT ACCEPT LOOSE NEEDLES. Visit a drop-off location to get a free sharps collection container. No business waste."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "clothing",
+      "bin": "reuse",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/clothes-usable",
+        "section": "SF Recycles → Clothes (usable)",
+        "quote": "Please reuse or donate Donate clean and dry clothes to a local thrift store. Call to inquire if they accept other items such as bedding and linens. If you have damaged or unusable clothes, please visit this page on our site for more information."
+      },
+      "verified": true
+    },
+    {
+      "itemId": "cd-dvd",
+      "bin": "reuse",
+      "citation": {
+        "sourceId": "sf-sfrecycles",
+        "url": "https://www.sfenvironment.org/sfrecycles/item/cds-dvds-working",
+        "section": "SF Recycles → CDs, DVDs (working)",
+        "quote": "Please reuse or donate"
+      },
+      "verified": true
+    }
+  ]
+}

@@ -1,0 +1,1404 @@
+{
+  "$schema": "./items.schema.json",
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "cardboard-box",
+      "name": "Cardboard box",
+      "category": "Paper",
+      "material": "corrugated",
+      "unitMassG": 400,
+      "synonyms": [
+        "corrugated cardboard",
+        "shipping box",
+        "amazon box",
+        "moving box",
+        "brown box",
+        "carton box"
+      ]
+    },
+    {
+      "id": "pizza-box",
+      "name": "Pizza box (greasy)",
+      "category": "Paper",
+      "material": "corrugated",
+      "unitMassG": 250,
+      "synonyms": [
+        "greasy pizza box",
+        "pizza box",
+        "food-soiled cardboard",
+        "oily box"
+      ]
+    },
+    {
+      "id": "cereal-box",
+      "name": "Cereal box / boxboard",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 60,
+      "synonyms": [
+        "cracker box",
+        "pasta box",
+        "boxboard",
+        "paperboard box",
+        "shoe box",
+        "tissue box",
+        "cereal box"
+      ]
+    },
+    {
+      "id": "newspaper",
+      "name": "Newspaper",
+      "category": "Paper",
+      "material": "newspaper",
+      "unitMassG": 250,
+      "synonyms": [
+        "newsprint",
+        "flyers",
+        "newspapers",
+        "paper"
+      ]
+    },
+    {
+      "id": "magazine",
+      "name": "Magazine / catalog",
+      "category": "Paper",
+      "material": "magazines",
+      "unitMassG": 200,
+      "synonyms": [
+        "catalog",
+        "catalogue",
+        "glossy paper",
+        "magazines"
+      ]
+    },
+    {
+      "id": "junk-mail",
+      "name": "Junk mail & envelopes",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 30,
+      "synonyms": [
+        "envelope",
+        "envelopes",
+        "mail",
+        "letters",
+        "window envelope",
+        "office paper",
+        "printer paper",
+        "sticky notes"
+      ]
+    },
+    {
+      "id": "shredded-paper",
+      "name": "Shredded paper",
+      "category": "Paper",
+      "material": "office-paper",
+      "unitMassG": 200,
+      "synonyms": [
+        "shredded documents",
+        "paper shreds",
+        "shredder paper"
+      ]
+    },
+    {
+      "id": "paper-bag",
+      "name": "Paper bag",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 50,
+      "synonyms": [
+        "kraft bag",
+        "grocery paper bag",
+        "brown paper bag",
+        "paper shopping bag"
+      ]
+    },
+    {
+      "id": "paper-coffee-cup",
+      "name": "Paper coffee cup",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 12,
+      "synonyms": [
+        "coffee cup",
+        "to-go cup",
+        "hot cup",
+        "paper cup",
+        "cup sleeve",
+        "takeaway cup",
+        "starbucks cup"
+      ]
+    },
+    {
+      "id": "milk-carton",
+      "name": "Milk carton (gable top)",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 30,
+      "synonyms": [
+        "gable top carton",
+        "juice carton",
+        "soy milk carton",
+        "almond milk carton",
+        "cream carton",
+        "milk carton"
+      ]
+    },
+    {
+      "id": "juice-box",
+      "name": "Juice box / Tetra Pak",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 12,
+      "synonyms": [
+        "tetra pak",
+        "aseptic carton",
+        "soup carton",
+        "broth carton",
+        "drink box",
+        "juice box"
+      ]
+    },
+    {
+      "id": "egg-carton-paper",
+      "name": "Paper egg carton",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 35,
+      "synonyms": [
+        "egg carton",
+        "egg box",
+        "molded pulp carton",
+        "cardboard egg carton",
+        "egg tray"
+      ]
+    },
+    {
+      "id": "paper-towel",
+      "name": "Paper towels & napkins",
+      "category": "Paper",
+      "material": "mixed-organics",
+      "unitMassG": 5,
+      "synonyms": [
+        "napkin",
+        "serviette",
+        "kitchen roll",
+        "paper napkin",
+        "paper towel"
+      ]
+    },
+    {
+      "id": "tissues",
+      "name": "Used facial tissues",
+      "category": "Hygiene",
+      "material": "mixed-organics",
+      "unitMassG": 3,
+      "synonyms": [
+        "kleenex",
+        "facial tissue",
+        "used tissue",
+        "tissues"
+      ]
+    },
+    {
+      "id": "paper-plate",
+      "name": "Paper plate (food-soiled)",
+      "category": "Paper",
+      "material": "mixed-organics",
+      "unitMassG": 15,
+      "synonyms": [
+        "dirty paper plate",
+        "chinet plate",
+        "paper bowl",
+        "paper plate"
+      ]
+    },
+    {
+      "id": "cardboard-tube",
+      "name": "Toilet paper / paper towel tube",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 10,
+      "synonyms": [
+        "toilet paper roll",
+        "paper towel roll",
+        "cardboard tube",
+        "tp roll"
+      ]
+    },
+    {
+      "id": "wrapping-paper",
+      "name": "Wrapping paper",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 50,
+      "synonyms": [
+        "gift wrap",
+        "gift wrapping paper",
+        "christmas wrapping",
+        "birthday wrapping"
+      ]
+    },
+    {
+      "id": "receipt",
+      "name": "Receipt (shiny thermal paper)",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 2,
+      "synonyms": [
+        "till receipt",
+        "cash register receipt",
+        "sales receipt",
+        "thermal paper",
+        "receipts"
+      ]
+    },
+    {
+      "id": "hardcover-book",
+      "name": "Hardcover book",
+      "category": "Paper",
+      "material": "office-paper",
+      "unitMassG": 600,
+      "synonyms": [
+        "book",
+        "hardback",
+        "textbook",
+        "novel",
+        "books"
+      ]
+    },
+    {
+      "id": "ice-cream-carton",
+      "name": "Paper ice cream container",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 40,
+      "synonyms": [
+        "ice cream tub paper",
+        "ice cream carton",
+        "ice cream box"
+      ]
+    },
+    {
+      "id": "frozen-food-box",
+      "name": "Frozen food box",
+      "category": "Paper",
+      "material": "mixed-paper",
+      "unitMassG": 60,
+      "synonyms": [
+        "frozen dinner box",
+        "freezer box",
+        "frozen pizza box"
+      ]
+    },
+    {
+      "id": "aluminum-can",
+      "name": "Aluminum drink can",
+      "category": "Metal",
+      "material": "aluminum",
+      "unitMassG": 15,
+      "synonyms": [
+        "soda can",
+        "pop can",
+        "drink can",
+        "beverage can",
+        "coke can",
+        "aluminium can",
+        "can"
+      ]
+    },
+    {
+      "id": "beer-can",
+      "name": "Beer / alcohol can",
+      "category": "Metal",
+      "material": "aluminum",
+      "unitMassG": 15,
+      "synonyms": [
+        "beer can",
+        "cider can",
+        "seltzer can",
+        "alcohol can",
+        "hard seltzer"
+      ]
+    },
+    {
+      "id": "steel-can",
+      "name": "Food can (steel / tin)",
+      "category": "Metal",
+      "material": "steel",
+      "unitMassG": 50,
+      "synonyms": [
+        "tin can",
+        "soup can",
+        "tuna can",
+        "food tin",
+        "pet food can",
+        "bean can",
+        "canned food"
+      ]
+    },
+    {
+      "id": "aluminum-foil",
+      "name": "Aluminum foil",
+      "category": "Metal",
+      "material": "aluminum",
+      "unitMassG": 10,
+      "synonyms": [
+        "tin foil",
+        "foil",
+        "alfoil",
+        "kitchen foil",
+        "aluminium foil"
+      ]
+    },
+    {
+      "id": "aluminum-tray",
+      "name": "Aluminum tray / pie plate",
+      "category": "Metal",
+      "material": "aluminum",
+      "unitMassG": 30,
+      "synonyms": [
+        "foil tray",
+        "roasting pan",
+        "pie tin",
+        "aluminum container",
+        "takeout foil container"
+      ]
+    },
+    {
+      "id": "aerosol-can",
+      "name": "Aerosol can (empty)",
+      "category": "Metal",
+      "material": "steel",
+      "unitMassG": 60,
+      "synonyms": [
+        "spray can",
+        "hairspray can",
+        "whipped cream can",
+        "air freshener can",
+        "deodorant spray",
+        "shaving cream can"
+      ]
+    },
+    {
+      "id": "metal-jar-lid",
+      "name": "Metal jar lid",
+      "category": "Metal",
+      "material": "steel",
+      "unitMassG": 6,
+      "synonyms": [
+        "jar lid",
+        "metal lid",
+        "metal cap",
+        "mason jar lid",
+        "twist-off lid"
+      ]
+    },
+    {
+      "id": "plastic-bottle-cap",
+      "name": "Loose plastic bottle cap",
+      "category": "Plastic",
+      "material": "pp",
+      "unitMassG": 2,
+      "synonyms": [
+        "bottle cap",
+        "plastic cap",
+        "bottle top",
+        "screw cap"
+      ]
+    },
+    {
+      "id": "pots-pans",
+      "name": "Metal pot or pan",
+      "category": "Metal",
+      "material": "steel",
+      "unitMassG": 1000,
+      "synonyms": [
+        "frying pan",
+        "saucepan",
+        "cookware",
+        "skillet",
+        "baking tray",
+        "pan",
+        "pot"
+      ]
+    },
+    {
+      "id": "paint-can-empty",
+      "name": "Empty paint can",
+      "category": "Metal",
+      "material": "steel",
+      "unitMassG": 300,
+      "synonyms": [
+        "paint tin",
+        "empty paint tin",
+        "metal paint can"
+      ]
+    },
+    {
+      "id": "wire-hanger",
+      "name": "Wire coat hanger",
+      "category": "Metal",
+      "material": "steel",
+      "unitMassG": 40,
+      "synonyms": [
+        "coat hanger",
+        "metal hanger",
+        "dry cleaner hanger",
+        "clothes hanger"
+      ]
+    },
+    {
+      "id": "glass-bottle",
+      "name": "Glass bottle (non-alcohol)",
+      "category": "Glass",
+      "material": "glass",
+      "unitMassG": 300,
+      "synonyms": [
+        "glass bottle",
+        "sauce bottle",
+        "juice bottle",
+        "kombucha bottle",
+        "soda bottle glass"
+      ]
+    },
+    {
+      "id": "wine-bottle",
+      "name": "Wine / liquor bottle",
+      "category": "Glass",
+      "material": "glass",
+      "unitMassG": 500,
+      "synonyms": [
+        "wine bottle",
+        "liquor bottle",
+        "beer bottle",
+        "spirits bottle",
+        "vodka bottle",
+        "alcohol bottle"
+      ]
+    },
+    {
+      "id": "glass-jar",
+      "name": "Glass jar",
+      "category": "Glass",
+      "material": "glass",
+      "unitMassG": 250,
+      "synonyms": [
+        "mason jar",
+        "jam jar",
+        "pasta sauce jar",
+        "pickle jar",
+        "baby food jar",
+        "jar"
+      ]
+    },
+    {
+      "id": "drinking-glass",
+      "name": "Drinking glass / Pyrex",
+      "category": "Glass",
+      "material": "none",
+      "unitMassG": 250,
+      "synonyms": [
+        "glass cup",
+        "wine glass",
+        "tumbler",
+        "pyrex",
+        "glassware",
+        "window glass"
+      ]
+    },
+    {
+      "id": "broken-glass-bottle",
+      "name": "Broken glass bottle or jar",
+      "category": "Glass",
+      "material": "glass",
+      "unitMassG": 150,
+      "synonyms": [
+        "broken bottle",
+        "broken jar",
+        "glass shards"
+      ]
+    },
+    {
+      "id": "ceramic-dish",
+      "name": "Ceramic mug / plate",
+      "category": "Glass",
+      "material": "none",
+      "unitMassG": 400,
+      "synonyms": [
+        "mug",
+        "plate",
+        "bowl",
+        "dishware",
+        "porcelain",
+        "china",
+        "broken plate"
+      ]
+    },
+    {
+      "id": "mirror",
+      "name": "Mirror",
+      "category": "Glass",
+      "material": "none",
+      "unitMassG": 2000,
+      "synonyms": [
+        "broken mirror",
+        "mirror glass"
+      ]
+    },
+    {
+      "id": "plastic-bottle",
+      "name": "Plastic drink bottle",
+      "category": "Plastic",
+      "material": "pet",
+      "unitMassG": 25,
+      "synonyms": [
+        "water bottle",
+        "soda bottle",
+        "pop bottle",
+        "pet bottle",
+        "juice bottle",
+        "plastic bottle"
+      ]
+    },
+    {
+      "id": "plastic-jug",
+      "name": "Plastic jug (milk, detergent)",
+      "category": "Plastic",
+      "material": "hdpe",
+      "unitMassG": 80,
+      "synonyms": [
+        "milk jug",
+        "laundry detergent jug",
+        "bleach bottle",
+        "hdpe jug",
+        "juice jug"
+      ]
+    },
+    {
+      "id": "shampoo-bottle",
+      "name": "Shampoo / lotion bottle",
+      "category": "Plastic",
+      "material": "hdpe",
+      "unitMassG": 40,
+      "synonyms": [
+        "lotion bottle",
+        "soap bottle",
+        "body wash bottle",
+        "conditioner bottle",
+        "shampoo"
+      ]
+    },
+    {
+      "id": "plastic-tub",
+      "name": "Yogurt / margarine tub",
+      "category": "Plastic",
+      "material": "pp",
+      "unitMassG": 20,
+      "synonyms": [
+        "yogurt cup",
+        "yoghurt tub",
+        "margarine tub",
+        "deli container",
+        "sour cream tub",
+        "cottage cheese tub",
+        "butter tub"
+      ]
+    },
+    {
+      "id": "plastic-clamshell",
+      "name": "Plastic clamshell / takeout box",
+      "category": "Plastic",
+      "material": "pet",
+      "unitMassG": 25,
+      "synonyms": [
+        "berry container",
+        "salad container",
+        "plastic takeout container",
+        "to-go container",
+        "clamshell"
+      ]
+    },
+    {
+      "id": "plastic-cup",
+      "name": "Plastic cold-drink cup",
+      "category": "Plastic",
+      "material": "pp",
+      "unitMassG": 12,
+      "synonyms": [
+        "plastic cup",
+        "iced coffee cup",
+        "solo cup",
+        "smoothie cup",
+        "bubble tea cup"
+      ]
+    },
+    {
+      "id": "coffee-lid",
+      "name": "Plastic coffee-cup lid",
+      "category": "Plastic",
+      "material": "mixed-plastics",
+      "unitMassG": 3,
+      "synonyms": [
+        "cup lid",
+        "drink lid",
+        "coffee lid",
+        "sippy lid"
+      ]
+    },
+    {
+      "id": "plastic-cutlery",
+      "name": "Plastic cutlery",
+      "category": "Plastic",
+      "material": "mixed-plastics",
+      "unitMassG": 3,
+      "synonyms": [
+        "plastic fork",
+        "plastic spoon",
+        "plastic knife",
+        "utensils",
+        "disposable cutlery"
+      ]
+    },
+    {
+      "id": "plastic-bag",
+      "name": "Plastic grocery bag",
+      "category": "Plastic",
+      "material": "ldpe",
+      "unitMassG": 6,
+      "synonyms": [
+        "shopping bag",
+        "plastic bag",
+        "carrier bag",
+        "produce bag",
+        "bread bag",
+        "grocery bag",
+        "bags"
+      ]
+    },
+    {
+      "id": "plastic-film",
+      "name": "Plastic wrap / film",
+      "category": "Plastic",
+      "material": "ldpe",
+      "unitMassG": 5,
+      "synonyms": [
+        "cling wrap",
+        "saran wrap",
+        "shrink wrap",
+        "stretch wrap",
+        "plastic film",
+        "overwrap",
+        "cling film"
+      ]
+    },
+    {
+      "id": "zip-bag",
+      "name": "Zip-top bag (Ziploc)",
+      "category": "Plastic",
+      "material": "ldpe",
+      "unitMassG": 5,
+      "synonyms": [
+        "ziploc",
+        "ziplock",
+        "sandwich bag",
+        "freezer bag",
+        "resealable bag"
+      ]
+    },
+    {
+      "id": "bubble-wrap",
+      "name": "Bubble wrap / air pillows",
+      "category": "Plastic",
+      "material": "ldpe",
+      "unitMassG": 15,
+      "synonyms": [
+        "bubblewrap",
+        "air pillows",
+        "packing air cushions",
+        "inflatable packaging"
+      ]
+    },
+    {
+      "id": "plastic-mailer",
+      "name": "Plastic / padded mailer",
+      "category": "Plastic",
+      "material": "ldpe",
+      "unitMassG": 20,
+      "synonyms": [
+        "poly mailer",
+        "bubble mailer",
+        "padded envelope",
+        "shipping bag",
+        "amazon mailer"
+      ]
+    },
+    {
+      "id": "chip-bag",
+      "name": "Chip bag / candy wrapper",
+      "category": "Plastic",
+      "material": "none",
+      "unitMassG": 5,
+      "synonyms": [
+        "crisp packet",
+        "potato chip bag",
+        "snack bag",
+        "candy wrapper",
+        "granola bar wrapper",
+        "mylar",
+        "chocolate wrapper"
+      ]
+    },
+    {
+      "id": "stand-up-pouch",
+      "name": "Stand-up pouch",
+      "category": "Plastic",
+      "material": "none",
+      "unitMassG": 10,
+      "synonyms": [
+        "pouch",
+        "juice pouch",
+        "capri sun",
+        "refill pouch",
+        "oatmeal pouch",
+        "snack pouch"
+      ]
+    },
+    {
+      "id": "foam-cup",
+      "name": "Foam cup (Styrofoam)",
+      "category": "Plastic",
+      "material": "ps",
+      "unitMassG": 3,
+      "synonyms": [
+        "styrofoam cup",
+        "polystyrene cup",
+        "foam coffee cup",
+        "eps cup"
+      ]
+    },
+    {
+      "id": "foam-takeout",
+      "name": "Foam takeout container",
+      "category": "Plastic",
+      "material": "ps",
+      "unitMassG": 10,
+      "synonyms": [
+        "styrofoam clamshell",
+        "foam clamshell",
+        "foam box",
+        "styrofoam container"
+      ]
+    },
+    {
+      "id": "foam-block",
+      "name": "Foam packaging block",
+      "category": "Plastic",
+      "material": "ps",
+      "unitMassG": 100,
+      "synonyms": [
+        "styrofoam block",
+        "eps foam",
+        "polystyrene packaging",
+        "styrofoam packaging"
+      ]
+    },
+    {
+      "id": "packing-peanuts",
+      "name": "Foam packing peanuts",
+      "category": "Plastic",
+      "material": "ps",
+      "unitMassG": 20,
+      "synonyms": [
+        "styrofoam peanuts",
+        "foam peanuts",
+        "loose fill"
+      ]
+    },
+    {
+      "id": "foam-meat-tray",
+      "name": "Foam meat tray",
+      "category": "Plastic",
+      "material": "ps",
+      "unitMassG": 8,
+      "synonyms": [
+        "styrofoam tray",
+        "meat tray",
+        "foam produce tray",
+        "polystyrene tray"
+      ]
+    },
+    {
+      "id": "straw",
+      "name": "Plastic straw",
+      "category": "Plastic",
+      "material": "mixed-plastics",
+      "unitMassG": 1,
+      "synonyms": [
+        "straw",
+        "drinking straw",
+        "stir stick"
+      ]
+    },
+    {
+      "id": "flower-pot",
+      "name": "Plastic plant pot",
+      "category": "Plastic",
+      "material": "pp",
+      "unitMassG": 50,
+      "synonyms": [
+        "flower pot",
+        "nursery pot",
+        "plant tray",
+        "seedling tray",
+        "planter"
+      ]
+    },
+    {
+      "id": "plastic-bucket",
+      "name": "Plastic bucket",
+      "category": "Plastic",
+      "material": "hdpe",
+      "unitMassG": 600,
+      "synonyms": [
+        "pail",
+        "bucket",
+        "paint bucket plastic"
+      ]
+    },
+    {
+      "id": "plastic-toy",
+      "name": "Rigid plastic toy (no batteries)",
+      "category": "Plastic",
+      "material": "mixed-plastics",
+      "unitMassG": 200,
+      "synonyms": [
+        "toy",
+        "plastic toy",
+        "action figure",
+        "kids toy"
+      ]
+    },
+    {
+      "id": "pill-bottle",
+      "name": "Pill / vitamin bottle",
+      "category": "Plastic",
+      "material": "pp",
+      "unitMassG": 20,
+      "synonyms": [
+        "vitamin bottle",
+        "prescription bottle",
+        "medicine bottle",
+        "pill container",
+        "pill vial"
+      ]
+    },
+    {
+      "id": "toothpaste-tube",
+      "name": "Toothpaste tube",
+      "category": "Plastic",
+      "material": "none",
+      "unitMassG": 15,
+      "synonyms": [
+        "toothpaste",
+        "squeeze tube",
+        "lotion tube",
+        "ointment tube",
+        "cream tube"
+      ]
+    },
+    {
+      "id": "coffee-pod",
+      "name": "Coffee pod (K-Cup)",
+      "category": "Plastic",
+      "material": "none",
+      "unitMassG": 3,
+      "synonyms": [
+        "k-cup",
+        "keurig pod",
+        "nespresso capsule",
+        "coffee capsule",
+        "tassimo disc"
+      ]
+    },
+    {
+      "id": "blister-pack",
+      "name": "Blister pack",
+      "category": "Plastic",
+      "material": "none",
+      "unitMassG": 10,
+      "synonyms": [
+        "blister packaging",
+        "pill blister",
+        "hard plastic packaging",
+        "battery packaging"
+      ]
+    },
+    {
+      "id": "compostable-cup",
+      "name": "“Compostable” plastic cup (PLA)",
+      "category": "Plastic",
+      "material": "none",
+      "unitMassG": 10,
+      "synonyms": [
+        "pla cup",
+        "compostable plastic",
+        "bioplastic",
+        "plant-based plastic",
+        "compostable cutlery",
+        "compostable container"
+      ]
+    },
+    {
+      "id": "six-pack-rings",
+      "name": "Flexible 6-pack rings",
+      "category": "Plastic",
+      "material": "ldpe",
+      "unitMassG": 5,
+      "synonyms": [
+        "six pack rings",
+        "can rings",
+        "beverage rings",
+        "6-pack carrier"
+      ]
+    },
+    {
+      "id": "food-scraps",
+      "name": "Food scraps",
+      "category": "Organics",
+      "material": "food-waste",
+      "unitMassG": 300,
+      "synonyms": [
+        "leftovers",
+        "fruit",
+        "vegetables",
+        "peels",
+        "food waste",
+        "bread",
+        "rice",
+        "spoiled food",
+        "moldy food",
+        "banana peel",
+        "apple core"
+      ]
+    },
+    {
+      "id": "meat-bones",
+      "name": "Meat, fish & bones",
+      "category": "Organics",
+      "material": "food-waste",
+      "unitMassG": 200,
+      "synonyms": [
+        "bones",
+        "chicken bones",
+        "fish",
+        "shellfish",
+        "seafood shells",
+        "meat",
+        "shrimp shells"
+      ]
+    },
+    {
+      "id": "coffee-grounds",
+      "name": "Coffee grounds & paper filter",
+      "category": "Organics",
+      "material": "food-waste",
+      "unitMassG": 100,
+      "synonyms": [
+        "coffee filter",
+        "coffee grinds",
+        "espresso grounds"
+      ]
+    },
+    {
+      "id": "tea-bag",
+      "name": "Tea bag (paper)",
+      "category": "Organics",
+      "material": "food-waste",
+      "unitMassG": 3,
+      "synonyms": [
+        "teabag",
+        "tea bags",
+        "loose tea"
+      ]
+    },
+    {
+      "id": "eggshells",
+      "name": "Eggshells",
+      "category": "Organics",
+      "material": "food-waste",
+      "unitMassG": 20,
+      "synonyms": [
+        "egg shells",
+        "eggs",
+        "nutshells"
+      ]
+    },
+    {
+      "id": "yard-waste",
+      "name": "Leaves & yard trimmings",
+      "category": "Organics",
+      "material": "mixed-organics",
+      "unitMassG": 1000,
+      "synonyms": [
+        "leaves",
+        "grass clippings",
+        "weeds",
+        "branches",
+        "garden waste",
+        "yard waste"
+      ]
+    },
+    {
+      "id": "cooking-oil",
+      "name": "Cooking grease (small amount)",
+      "category": "Organics",
+      "material": "none",
+      "unitMassG": 100,
+      "synonyms": [
+        "grease",
+        "bacon fat",
+        "frying oil",
+        "vegetable oil",
+        "cooking oil",
+        "fat"
+      ]
+    },
+    {
+      "id": "wood-chopsticks",
+      "name": "Wooden chopsticks / stir sticks",
+      "category": "Organics",
+      "material": "none",
+      "unitMassG": 5,
+      "synonyms": [
+        "chopsticks",
+        "popsicle stick",
+        "coffee stirrer",
+        "toothpick",
+        "wooden skewer"
+      ]
+    },
+    {
+      "id": "cork",
+      "name": "Wine cork (natural)",
+      "category": "Organics",
+      "material": "none",
+      "unitMassG": 4,
+      "synonyms": [
+        "cork",
+        "wine cork",
+        "bottle cork"
+      ]
+    },
+    {
+      "id": "compostable-bag",
+      "name": "Certified compostable bag",
+      "category": "Organics",
+      "material": "none",
+      "unitMassG": 10,
+      "synonyms": [
+        "bpi bag",
+        "compost bin liner",
+        "biobag",
+        "compostable bag"
+      ]
+    },
+    {
+      "id": "diaper",
+      "name": "Disposable diaper",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 200,
+      "synonyms": [
+        "nappy",
+        "pampers",
+        "huggies",
+        "diapers",
+        "pull-ups"
+      ]
+    },
+    {
+      "id": "pet-waste",
+      "name": "Dog / cat poop",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 100,
+      "synonyms": [
+        "dog poop",
+        "cat poop",
+        "pet waste",
+        "poo bag",
+        "dog waste"
+      ]
+    },
+    {
+      "id": "kitty-litter",
+      "name": "Cat litter (clay)",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 1000,
+      "synonyms": [
+        "kitty litter",
+        "cat litter",
+        "clay litter",
+        "used litter"
+      ]
+    },
+    {
+      "id": "menstrual-pad",
+      "name": "Menstrual pad",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 10,
+      "synonyms": [
+        "sanitary pad",
+        "maxi pad",
+        "panty liner",
+        "period pad"
+      ]
+    },
+    {
+      "id": "wipes",
+      "name": "Wet wipes",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 5,
+      "synonyms": [
+        "baby wipes",
+        "flushable wipes",
+        "cleaning wipes",
+        "makeup wipes",
+        "wet wipe"
+      ]
+    },
+    {
+      "id": "cotton-swab",
+      "name": "Cotton swab / cotton ball",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 1,
+      "synonyms": [
+        "q-tip",
+        "cotton bud",
+        "cotton ball",
+        "ear swab"
+      ]
+    },
+    {
+      "id": "face-mask",
+      "name": "Disposable face mask / gloves",
+      "category": "Hygiene",
+      "material": "none",
+      "unitMassG": 4,
+      "synonyms": [
+        "disposable mask",
+        "surgical mask",
+        "ppe",
+        "latex gloves",
+        "n95"
+      ]
+    },
+    {
+      "id": "battery",
+      "name": "Household batteries",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 25,
+      "synonyms": [
+        "aa battery",
+        "aaa battery",
+        "battery",
+        "batteries",
+        "9v",
+        "lithium battery",
+        "button cell",
+        "rechargeable battery"
+      ]
+    },
+    {
+      "id": "cfl-bulb",
+      "name": "Fluorescent bulb (CFL / tube)",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 100,
+      "synonyms": [
+        "cfl",
+        "fluorescent tube",
+        "compact fluorescent",
+        "fluorescent light"
+      ]
+    },
+    {
+      "id": "led-bulb",
+      "name": "LED light bulb",
+      "category": "Hazardous",
+      "material": "none",
+      "unitMassG": 60,
+      "synonyms": [
+        "led bulb",
+        "led lamp",
+        "led light"
+      ]
+    },
+    {
+      "id": "incandescent-bulb",
+      "name": "Incandescent / halogen bulb",
+      "category": "Hazardous",
+      "material": "none",
+      "unitMassG": 30,
+      "synonyms": [
+        "light bulb",
+        "halogen bulb",
+        "incandescent bulb",
+        "old light bulb"
+      ]
+    },
+    {
+      "id": "electronics",
+      "name": "Phone, laptop & small electronics",
+      "category": "Hazardous",
+      "material": "e-waste",
+      "unitMassG": 200,
+      "synonyms": [
+        "smartphone",
+        "cell phone",
+        "iphone",
+        "tablet",
+        "laptop",
+        "earbuds",
+        "e-waste",
+        "electronics",
+        "power bank"
+      ]
+    },
+    {
+      "id": "cables",
+      "name": "Cords & charging cables",
+      "category": "Hazardous",
+      "material": "none",
+      "unitMassG": 100,
+      "synonyms": [
+        "charging cable",
+        "charger",
+        "usb cable",
+        "phone charger",
+        "power cord"
+      ]
+    },
+    {
+      "id": "vape",
+      "name": "Vape / e-cigarette",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 30,
+      "synonyms": [
+        "e-cigarette",
+        "vape pen",
+        "vaping device",
+        "disposable vape",
+        "e-cig"
+      ]
+    },
+    {
+      "id": "paint",
+      "name": "Leftover paint",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 2000,
+      "synonyms": [
+        "latex paint",
+        "oil paint",
+        "stain",
+        "varnish",
+        "house paint"
+      ]
+    },
+    {
+      "id": "propane-canister",
+      "name": "Small propane / butane canister",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 400,
+      "synonyms": [
+        "propane",
+        "butane",
+        "camping gas",
+        "1 lb propane",
+        "coleman canister",
+        "camp stove fuel"
+      ]
+    },
+    {
+      "id": "medicine",
+      "name": "Medicine & pills",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 50,
+      "synonyms": [
+        "pills",
+        "prescription drugs",
+        "medication",
+        "medicines",
+        "tablets"
+      ]
+    },
+    {
+      "id": "sharps",
+      "name": "Needles & syringes",
+      "category": "Hazardous",
+      "material": "hazardous",
+      "unitMassG": 20,
+      "synonyms": [
+        "needles",
+        "syringes",
+        "lancets",
+        "epipen",
+        "insulin pen",
+        "sharps"
+      ]
+    },
+    {
+      "id": "clothing",
+      "name": "Clothing & shoes",
+      "category": "Other",
+      "material": "none",
+      "unitMassG": 500,
+      "synonyms": [
+        "clothes",
+        "shirt",
+        "jeans",
+        "shoes",
+        "textiles",
+        "fabric",
+        "jacket"
+      ]
+    },
+    {
+      "id": "garden-hose",
+      "name": "Garden hose",
+      "category": "Other",
+      "material": "none",
+      "unitMassG": 1500,
+      "synonyms": [
+        "hose",
+        "rubber hose",
+        "water hose"
+      ]
+    },
+    {
+      "id": "cd-dvd",
+      "name": "CD / DVD",
+      "category": "Other",
+      "material": "none",
+      "unitMassG": 15,
+      "synonyms": [
+        "cd",
+        "dvd",
+        "compact disc",
+        "blu-ray",
+        "disc"
+      ]
+    }
+  ]
+}
