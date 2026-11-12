@@ -1,0 +1,40 @@
+{
+  "name": "sortlocal",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "SortLocal: city-specific recycling rules as code, with citations, a deterministic resolver and a contamination audit.",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run rules:validate && tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "rules:build": "node rules-src/build-rules.mjs",
+    "rules:validate": "node scripts/validate-rules.mjs",
+    "rules:compile": "node scripts/compile-rules-llm.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "@eslint/js": "^9.16.0",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.13.0",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.17.0",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  }
+}
