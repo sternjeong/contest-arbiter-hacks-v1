@@ -1,0 +1,14 @@
+# 대회 데이터·산출물은 용량·규정 때문에 커밋하지 않는다
+data/
+!data/.gitkeep
+submissions/*
+!submissions/.gitkeep
+*.zip
+*.parquet
+*.pkl
+*.pt
+*.ckpt
+.ipynb_checkpoints/
+__pycache__/
+.venv/
+.env
