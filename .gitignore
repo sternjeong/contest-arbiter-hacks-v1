@@ -12,3 +12,8 @@ submissions/*
 __pycache__/
 .venv/
 .env
+
+# SortLocal app
+node_modules/
+app/dist/
+*.draft.json

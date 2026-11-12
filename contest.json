@@ -4,9 +4,9 @@
   "platform": "기타",
   "url": "https://arbiter-hacks-v1.devpost.com/",
   "deadline": "2026-12-21",
-  "status": "준비",
+  "status": "개발중",
   "memo": "[대회 탐색] 어느 정도만 신경 / AI 주제의 자유 프로젝트를 만들어 제출(세부 제출물 미확인) / 사람 몫: 아이디어 선정, 데모 영상, 제출 문서 작성 / Devpost 목록 기준(상세 페이지 미확인) / $7,800",
-  "repo": "",
-  "repo_status": "pending",
+  "repo": "sternjeong/contest-arbiter-hacks-v1",
+  "repo_status": "created",
   "created_at": "2026-11-12T22:51:08+09:00"
 }
