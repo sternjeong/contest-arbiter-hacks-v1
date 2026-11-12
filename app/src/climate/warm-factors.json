@@ -1,0 +1,30 @@
+{
+  "title": "EPA Waste Reduction Model (WARM) v16 net emission factors",
+  "units": "metric tons CO2e per short ton of material (MTCO2E/short ton); negative = net reduction",
+  "publisher": "U.S. Environmental Protection Agency",
+  "version": "WARM Version 16, December 2023",
+  "retrieved": "2026-11-12",
+  "sources": [
+    { "id": "warm-cp", "title": "WARM v16: Containers, Packaging, and Non-Durable Goods Materials (PDF)", "url": "https://www.epa.gov/system/files/documents/2023-12/warm_containers_packaging_and_non-durable_goods_materials_v16_dec.pdf" },
+    { "id": "warm-org", "title": "WARM v16: Organic Materials (PDF)", "url": "https://www.epa.gov/system/files/documents/2023-12/warm_organic_materials_v16_dec.pdf" }
+  ],
+  "disclaimer": "Estimates only. Factors are U.S. national averages and assume the counterfactual is landfilling. Item masses are SortLocal default estimates, not measurements.",
+  "factors": {
+    "corrugated":     { "label": "Corrugated containers", "recycling": -3.14, "landfill": 0.18, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 3-7" },
+    "mixed-paper":    { "label": "Mixed paper (general)", "recycling": -3.55, "landfill": 0.07, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 3-7" },
+    "newspaper":      { "label": "Newspaper", "recycling": -2.71, "landfill": -0.85, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 3-7" },
+    "magazines":      { "label": "Magazines/third-class mail", "recycling": -3.07, "landfill": -0.43, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 3-7" },
+    "office-paper":   { "label": "Office paper", "recycling": -2.86, "landfill": 1.13, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 3-7" },
+    "aluminum":       { "label": "Aluminum cans", "recycling": -9.13, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 2-7" },
+    "steel":          { "label": "Steel cans", "recycling": -1.83, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 2-7" },
+    "glass":          { "label": "Glass", "recycling": -0.28, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 1-4" },
+    "pet":            { "label": "PET", "recycling": -1.04, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 5-3" },
+    "hdpe":           { "label": "HDPE", "recycling": -0.76, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 5-3" },
+    "pp":             { "label": "PP", "recycling": -0.79, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 5-3" },
+    "mixed-plastics": { "label": "Mixed plastics", "recycling": -0.93, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 5-3" },
+    "ldpe":           { "label": "LDPE (film)", "recycling": null, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 5-3", "note": "WARM has no recycling factor for LDPE (NA)." },
+    "ps":             { "label": "Polystyrene", "recycling": null, "landfill": 0.02, "compost": null, "source": "warm-cp", "exhibit": "Exhibit 5-3", "note": "WARM has no recycling factor for PS (NA)." },
+    "food-waste":     { "label": "Food waste", "recycling": null, "landfill": 0.50, "compost": -0.15, "source": "warm-org", "exhibit": "Exhibit 1-10" },
+    "mixed-organics": { "label": "Mixed organics", "recycling": null, "landfill": 0.18, "compost": -0.13, "source": "warm-org", "exhibit": "Exhibit 1-10" }
+  }
+}
